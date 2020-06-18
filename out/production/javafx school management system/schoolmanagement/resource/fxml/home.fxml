@@ -169,13 +169,13 @@
                                  <children>
                                     <AnchorPane prefHeight="154.0" prefWidth="257.0">
                                        <children>
-                                          <Circle fill="#d0c4c0" layoutX="63.0" layoutY="66.0" radius="46.0" stroke="#d0c4c0" strokeType="INSIDE" />
-                                          <Label fx:id="usernameLabel" layoutX="116.0" layoutY="31.0" prefHeight="19.0" prefWidth="114.0" text="Ahmad" textFill="WHITE">
+                                          <Circle fill="#d0c4c0" layoutX="49.0" layoutY="59.0" radius="40.0" stroke="#d0c4c0" strokeType="INSIDE" />
+                                          <Label fx:id="usernameLabel" layoutX="98.0" layoutY="29.0" prefHeight="36.0" prefWidth="155.0" text="Ahmad" textFill="WHITE">
                                              <font>
-                                                <Font name="Britannic Bold" size="30.0" />
+                                                <Font name="Britannic Bold" size="25.0" />
                                              </font>
                                           </Label>
-                                          <Label layoutX="116.0" layoutY="71.0" prefHeight="19.0" prefWidth="114.0" text="Logged User" textFill="WHITE">
+                                          <Label layoutX="102.0" layoutY="71.0" prefHeight="19.0" prefWidth="114.0" text="Logged User" textFill="WHITE">
                                              <font>
                                                 <Font name="Bauhaus 93" size="18.0" />
                                              </font>
@@ -333,7 +333,8 @@
                         <Insets bottom="10.0" left="23.0" right="10.0" top="10.0" />
                      </padding>
                   </HBox>
-               </children></VBox>
+               </children>
+            </VBox>
          </children>
       </VBox>
    </children>
