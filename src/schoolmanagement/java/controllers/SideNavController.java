@@ -3,7 +3,7 @@ package schoolmanagement.java.controllers;
 import com.jfoenix.controls.JFXButton;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.StackPane;
 import schoolmanagement.java.utils.Directories;
 import schoolmanagement.java.utils.FxmlHandlers;
 
@@ -12,7 +12,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class SideNavController {
-    AnchorPane homePane, addPane, viewPane;
+    StackPane homePane, addPane, viewPane;
     @FXML
     private JFXButton homeBtn;
     @FXML

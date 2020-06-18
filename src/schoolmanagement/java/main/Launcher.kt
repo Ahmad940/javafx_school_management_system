@@ -16,16 +16,17 @@ class Launcher : Application() {
     var applicationContext: ApplicationContext? = null
     override fun start(primaryStage: Stage) {
         var root: Parent? = null
-        try { //            root = FXMLLoader.load(getClass().getResource(Directories.MAIN_FXML_DIR));
+        try {
+//            root = FXMLLoader.load<Parent>(javaClass.getResource(Directories.MAIN_FXML_DIR));
             root = FXMLLoader.load<Parent>(javaClass.getResource(Directories.LOGIN_FXML_DIR))
-            //            root = FXMLLoader.load(getClass().getResource("/schoolmanagement/resource/fxml/main.fxml"));
+//            root = FXMLLoader.load<Parent>(javaClass.getResource(Directories.HOME_FXML_DIR))
         } catch (e: IOException) {
             println(e.message)
             e.printStackTrace()
         }
         val scene = Scene(root)
         scene.stylesheets.add(javaClass.getResource(Directories.JFOENIX_CSS_DIR).toExternalForm())
-        primaryStage.title = "Hello World"
+        primaryStage.title = "Students App"
         primaryStage.initStyle(StageStyle.UNDECORATED)
         primaryStage.isResizable = false
         primaryStage.scene = scene

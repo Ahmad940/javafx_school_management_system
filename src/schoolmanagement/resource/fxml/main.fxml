@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-
 <?import com.jfoenix.controls.JFXDrawer?>
 <?import com.jfoenix.controls.JFXHamburger?>
 <?import javafx.geometry.Insets?>
@@ -22,7 +21,7 @@
                 <HBox prefHeight="54.0" prefWidth="674.0" style="-fx-background-color: #3646AD;"
                       AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                     <children>
-                        <HBox prefHeight="54.0" prefWidth="189.0">
+                        <HBox prefHeight="54.0" prefWidth="114.0">
                             <children>
                                 <JFXHamburger fx:id="hamburger" stylesheets="@../css/jfoenix-main-demo.css">
                                     <HBox.margin>
@@ -41,7 +40,7 @@
                                 </Text>
                             </children>
                         </HBox>
-                        <HBox alignment="CENTER" prefHeight="54.0" prefWidth="187.0">
+                        <HBox alignment="CENTER" prefHeight="54.0" prefWidth="84.0">
                             <children>
                                 <Button fx:id="popUpBtn" mnemonicParsing="false"
                                         style="-fx-background-color: transparent;">
@@ -57,7 +56,7 @@
                                         <Cursor fx:constant="HAND"/>
                                     </cursor>
                                     <HBox.margin>
-                                        <Insets left="15.0"/>
+                                        <Insets/>
                                     </HBox.margin>
                                 </Button>
                             </children>

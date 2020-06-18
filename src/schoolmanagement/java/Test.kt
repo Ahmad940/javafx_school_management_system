@@ -2,9 +2,9 @@ package schoolmanagement.java
 
 import org.springframework.context.ApplicationContext
 import org.springframework.context.support.ClassPathXmlApplicationContext
+import schoolmanagement.java.dao.DepartmentsDao
 import schoolmanagement.java.dao.StudentsDao
 import schoolmanagement.java.dao.UsersDao
-import schoolmanagement.java.models.Users
 import schoolmanagement.java.utils.Directories
 
 object Test {
@@ -13,7 +13,11 @@ object Test {
         val applicationContext: ApplicationContext = ClassPathXmlApplicationContext(Directories.CONFIG_XML)
         val dao = applicationContext.getBean("usersDao") as UsersDao
         val studentsDao = applicationContext.getBean("studentsDao") as StudentsDao
+        val departmentsDao = applicationContext.getBean("departmentsDao") as DepartmentsDao
 
+        println(departmentsDao.saveDepartment("eating dept"))
+//        val departments = departmentsDao.departments
+//        println(departments)
 //        println(studentsDao.totalReg())
         //        Users users = new Users();
 //        users.setUserName("a");
@@ -26,7 +30,7 @@ object Test {
 //        System.out.println(dao.saveUser(users));
 //        println(dao.userExist("admin"))
 
-        val user: List<Users> = dao.getUser("admin")
-        println(user)
+//        val user: List<Users> = dao.getUser("admin")
+//        println(user)
     }
 }

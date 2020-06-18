@@ -1,7 +1,7 @@
 package schoolmanagement.java.models
 
 class Departments {
-    var id = 0
+    var id: String? = null
     var department: String? = null
 
     override fun toString(): String {

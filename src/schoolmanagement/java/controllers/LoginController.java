@@ -164,7 +164,9 @@ public class LoginController {
                 Stage stage = (Stage) node.getScene().getWindow();
 
                 stage.close();
-                stage.setScene(new Scene(pane));
+                Scene scene = new Scene(pane);
+                scene.getStylesheets().add(getClass().getResource(Directories.JFOENIX_CSS_DIR).toExternalForm());
+                stage.setScene(scene);
                 stage.setResizable(false);
                 stage.show();
             });
