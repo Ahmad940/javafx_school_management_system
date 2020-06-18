@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.VBox?>
+<VBox xmlns:fx="http://javafx.com/fxml/1" focusTraversable="true" maxHeight="-Infinity" maxWidth="-Infinity"
+      minHeight="-Infinity" minWidth="-Infinity" prefHeight="90.0" prefWidth="139.0"
+      xmlns="http://javafx.com/javafx/11.0.1" fx:controller="schoolmanagement.java.controllers.PopUpController">
+    <children>
+        <JFXButton alignment="BASELINE_LEFT" graphicTextGap="30.0" onAction="#logoutHandler" prefHeight="41.0"
+                   prefWidth="139.0" text="Logout">
+            <graphic>
+                <ImageView fitHeight="26.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../image/home%20icons/icons8_exit_26px.png"/>
+                    </image>
+                </ImageView>
+            </graphic>
+            <padding>
+                <Insets left="15.0"/>
+            </padding>
+        </JFXButton>
+        <JFXButton alignment="BASELINE_LEFT" graphicTextGap="30.0" onAction="#exitHandler" prefHeight="41.0"
+                   prefWidth="139.0" text="Exit">
+            <graphic>
+                <ImageView fitHeight="26.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../image/home%20icons/icons8_delete_26px.png"/>
+                    </image>
+                </ImageView>
+            </graphic>
+            <padding>
+                <Insets left="15.0"/>
+            </padding>
+        </JFXButton>
+    </children>
+</VBox>

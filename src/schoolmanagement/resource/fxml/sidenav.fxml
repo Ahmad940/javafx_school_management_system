@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.VBox?>
+<VBox xmlns:fx="http://javafx.com/fxml/1" focusTraversable="true" prefHeight="400.0" prefWidth="200.0"
+      xmlns="http://javafx.com/javafx/11.0.1" fx:controller="schoolmanagement.java.controllers.SideNavController">
+    <children>
+        <ImageView fitHeight="130.0" fitWidth="200.0" focusTraversable="true" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../image/back.jpg"/>
+            </image>
+        </ImageView>
+        <JFXButton fx:id="homeBtn" alignment="BASELINE_LEFT" graphicTextGap="35.0" prefHeight="41.0" prefWidth="200.0"
+                   text="Home">
+            <graphic>
+                <ImageView fitHeight="26.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../image/home%20icons/icons8_home_26px.png"/>
+                    </image>
+                </ImageView>
+            </graphic>
+            <padding>
+                <Insets left="15.0"/>
+            </padding>
+        </JFXButton>
+        <JFXButton fx:id="addBtn" alignment="BASELINE_LEFT" graphicTextGap="35.0" prefHeight="41.0" prefWidth="200.0"
+                   text="Add Student">
+            <graphic>
+                <ImageView fitHeight="26.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../image/home%20icons/icons8_add_new_26px.png"/>
+                    </image>
+                </ImageView>
+            </graphic>
+            <padding>
+                <Insets left="15.0"/>
+            </padding>
+        </JFXButton>
+        <JFXButton fx:id="viewBtn" alignment="BASELINE_LEFT" graphicTextGap="35.0" prefHeight="41.0" prefWidth="200.0"
+                   text="View Students">
+            <graphic>
+                <ImageView fitHeight="26.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../image/home%20icons/icons8_eye_24px.png"/>
+                    </image>
+                </ImageView>
+            </graphic>
+            <padding>
+                <Insets left="15.0"/>
+            </padding>
+        </JFXButton>
+    </children>
+</VBox>
