@@ -21,5 +21,7 @@ public class AddStudentController {
     public void initialize() {
         applicationContext = new ClassPathXmlApplicationContext(Directories.CONFIG_XML);
         studentsDao = (StudentsDao) applicationContext.getBean("studentsDao");
+
+        System.out.println();
     }
 }

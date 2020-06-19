@@ -1,7 +1,7 @@
 package schoolmanagement.java.models
 
 class Students {
-    var id = 0
+    var id: String? = null
     var firstName: String? = null
     var lastName: String? = null
     var mobileNumber: String? = null
