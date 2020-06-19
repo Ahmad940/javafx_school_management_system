@@ -6,6 +6,8 @@ import javafx.fxml.FXML;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.effect.BoxBlur;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
@@ -18,10 +20,13 @@ import schoolmanagement.java.models.Departments;
 import schoolmanagement.java.models.Users;
 import schoolmanagement.java.utils.Alerts;
 import schoolmanagement.java.utils.Directories;
+import schoolmanagement.java.utils.Validators;
 
 import java.util.List;
 
 public class HomeController {
+    String firstName, lastName, fullName = null;
+
     @FXML
     private Button addDepartmentBtn;
 
@@ -60,6 +65,8 @@ public class HomeController {
 
     @FXML
     private StackPane mainPane;
+    @FXML
+    private AnchorPane secondaryPane;
 
     private ApplicationContext applicationContext;
     private StudentsDao studentsDao;
@@ -95,15 +102,22 @@ public class HomeController {
         totalFemaleCountLabel.setText(studentsDao.totalFemales().toString());
 
         userList.forEach(user -> {
+            firstName = user.getFirstName();
+            lastName = user.getLastName();
+            fullName = user.getFirstName() + " " + user.getLastName();
+
             usernameLabel.setText(user.getUserName());
             roleLabel.setText(user.getRole());
-            fullNameLabel.setText(user.getFirstName() + " " + user.getLastName());
+            fullNameLabel.setText(fullName);
             emailLabel.setText(user.getEmail());
             mobileNoLabel.setText(user.getMobileNumber());
         });
     }
 
     public void onEditUser() {
+        BoxBlur blur = new BoxBlur(3.0, 3.0, 3);
+        secondaryPane.setEffect(blur);
+
         JFXDialogLayout content = new JFXDialogLayout();
         JFXDialog dialog = new JFXDialog(mainPane, content, JFXDialog.DialogTransition.TOP);
 //        JFXDialog dialog = new JFXDialog((StackPane) mainPane, content, JFXDialog.DialogTransition.CENTER);
@@ -112,25 +126,81 @@ public class HomeController {
         VBox box = new VBox();
         box.setSpacing(15);
         box.setAlignment(Pos.CENTER);
-        JFXTextField deptNameField = new JFXTextField();
-        deptNameField.setPromptText("Enter Department Name");
-        deptNameField.getStyleClass().add("deptField");
 
-        box.getChildren().addAll(deptNameField);
+        JFXTextField userNameField = new JFXTextField();
+        userNameField.setText(usernameLabel.getText());
+        userNameField.setPromptText("User Name");
+        userNameField.getStyleClass().add("deptField");
+        userNameField.setDisable(true);
+
+        JFXTextField firstNameField = new JFXTextField();
+        firstNameField.setText(firstName);
+        firstNameField.setPromptText("First name");
+        firstNameField.getStyleClass().add("deptField");
+
+        JFXTextField lastNameField = new JFXTextField();
+        lastNameField.setText(lastName);
+        lastNameField.setPromptText("Last name");
+        lastNameField.getStyleClass().add("deptField");
+
+        JFXTextField emailField = new JFXTextField();
+        emailField.setText(emailLabel.getText());
+        emailField.setPromptText("Email Address");
+        emailField.getStyleClass().add("deptField");
+
+        JFXTextField mobileNumberField = new JFXTextField();
+        mobileNumberField.setText(mobileNoLabel.getText());
+        mobileNumberField.setPromptText("Mobile Number");
+        mobileNumberField.getStyleClass().add("deptField");
+
+        box.getChildren().addAll(userNameField, firstNameField, lastNameField, emailField, mobileNumberField);
+        box.setSpacing(30.0);
         content.setBody(box);
 
-        JFXButton addBtn = new JFXButton("Add");
+        JFXButton saveBtn = new JFXButton("Save");
         JFXButton cancelBtn = new JFXButton("Cancel");
 
-        addBtn.getStyleClass().add("dial-btn");
+        saveBtn.getStyleClass().add("dial-btn");
         cancelBtn.getStyleClass().add("dial-btn");
 
-        addBtn.setOnAction(event -> {
-            if (deptNameField.getText().isEmpty() || deptNameField.getText().trim().isEmpty()) {
-                Alerts.INSTANCE.jfxAlert(mainPane, "Error", "Department Field cannot be empty");
+
+        saveBtn.setOnAction(event -> {
+            if (firstNameField.getText().isEmpty() || firstNameField.getText().trim().isEmpty()) {
+                Alerts.INSTANCE.jfxAlert(mainPane, "Error", "First Name Field cannot be empty");
                 return;
             }
-            departmentsDao.saveDepartment(deptNameField.getText());
+
+            if (lastNameField.getText().isEmpty() || lastNameField.getText().trim().isEmpty()) {
+                Alerts.INSTANCE.jfxAlert(mainPane, "Error", "Last Name Field cannot be empty");
+                return;
+            }
+
+            if (emailField.getText().isEmpty() || emailField.getText().trim().isEmpty()) {
+                Alerts.INSTANCE.jfxAlert(mainPane, "Error", "Email Field cannot be empty");
+                return;
+            }
+
+            if (mobileNumberField.getText().isEmpty() || mobileNumberField.getText().trim().isEmpty()) {
+                Alerts.INSTANCE.jfxAlert(mainPane, "Error", "Email Field cannot be empty");
+                return;
+            }
+
+            if (!Validators.INSTANCE.isNumber(mobileNumberField.getText())) {
+                Alerts.INSTANCE.jfxAlert(mainPane, "Error", "Mobile Number Field Must Be a Number");
+                return;
+            }
+
+            if (!usersDao.updateUser(userNameField.getText(), firstNameField.getText(), lastNameField.getText(),
+                    emailField.getText(), mobileNumberField.getText())) {
+                firstName = firstNameField.getText();
+                lastName = lastNameField.getText();
+                fullName = firstName + " " + lastName;
+
+                fullNameLabel.setText(fullName);
+                emailLabel.setText(emailField.getText());
+                mobileNumberField.setText(mobileNumberField.getText());
+            }
+
             dialog.close();
             departmentsList();
         });
@@ -139,8 +209,11 @@ public class HomeController {
             dialog.close();
         });
 
-        content.setActions(addBtn, cancelBtn);
+        content.setActions(saveBtn, cancelBtn);
 
+        dialog.setOnDialogClosed(event -> {
+            mainPane.setEffect(null);
+        });
         dialog.setLayoutX(100);
         dialog.show();
     }

@@ -15,7 +15,9 @@ object Test {
         val studentsDao = applicationContext.getBean("studentsDao") as StudentsDao
         val departmentsDao = applicationContext.getBean("departmentsDao") as DepartmentsDao
 
-        println(departmentsDao.saveDepartment("eating dept"))
+//        println(departmentsDao.saveDepartment("eating dept"))
+        println(dao.updateUser(userName = "maryam", firstName = "Maryam",
+                lastName = "Muhammad", email = "mmk@gmail.com", mobileNo = "09032438952"))
 //        val departments = departmentsDao.departments
 //        println(departments)
 //        println(studentsDao.totalReg())

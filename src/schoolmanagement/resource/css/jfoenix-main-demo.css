@@ -20,6 +20,6 @@
 .deptField {
     -jfx-label-float: true;
     -jfx-focus-color: #009884;
-    -fx-text-fill: #009884;
+    /*-fx-text-fill: #009884;*/
     -fx-font-size: 16;
 }

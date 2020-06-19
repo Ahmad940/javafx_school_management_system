@@ -7,6 +7,7 @@
 <?import javafx.scene.control.ContextMenu?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -18,340 +19,345 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-
 <StackPane fx:id="mainPane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="schoolmanagement.java.controllers.HomeController">
-   <children>
-      <AnchorPane prefHeight="616.0" prefWidth="1142.0" style="-fx-background-color: #E5E4E5;">
-          <children>
-              <VBox layoutX="239.0" layoutY="115.0" prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                  <children>
-                      <HBox alignment="BOTTOM_LEFT" prefHeight="113.0" prefWidth="1142.0" VBox.vgrow="ALWAYS">
-                          <children>
-                              <HBox alignment="BOTTOM_CENTER" maxHeight="-Infinity" prefHeight="212.0" prefWidth="282.0">
-                                  <children>
-                                      <Pane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="131.0" prefWidth="257.0" style="-fx-background-color: #fff;">
-                                          <children>
-                                              <Label alignment="CENTER_RIGHT" layoutX="134.0" layoutY="11.0" prefHeight="20.0" prefWidth="108.0" style="-fx-text-fill: #898789;" text="REGISTERED">
-                                                  <font>
-                                                      <Font name="Bauhaus 93" size="18.0" />
-                                                  </font>
-                                              </Label>
-                                              <Pane layoutX="16.0" layoutY="-30.0" prefHeight="101.0" prefWidth="94.0" style="-fx-background-color: #0081BE;">
-                                                  <children>
-                                                      <ImageView fitHeight="55.0" fitWidth="51.0" layoutX="22.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
-                                                          <image>
-                                                              <Image url="@../image/home%20icons/icons8_add_user_male_32px.png" />
-                                                          </image>
-                                                      </ImageView>
-                                                  </children>
-                                              </Pane>
-                                              <Line endX="133.0" fill="#6ab069" layoutX="105.0" layoutY="95.0" startX="-89.0" stroke="#6ab069" strokeWidth="5.0" />
-                                    <Label layoutX="12.0" layoutY="105.0" text="Total number of registered students">
-                                       <font>
-                                           <Font name="System Bold" size="14.0" />
-                                       </font>
-                                    </Label>
-                                              <Label fx:id="totalRegisteredCountLabel" alignment="CENTER_RIGHT" layoutX="150.0" layoutY="31.0" prefHeight="55.0" prefWidth="94.0" text="103">
-                                                  <font>
-                                                      <Font name="System Bold" size="36.0" />
-                                                  </font>
-                                              </Label>
-                                 </children>
-                              </Pane>
-                           </children>
-                        </HBox>
-                        <HBox alignment="BOTTOM_CENTER" maxHeight="-Infinity" prefHeight="212.0" prefWidth="282.0">
-                           <children>
-                               <Pane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="131.0" prefWidth="257.0" style="-fx-background-color: #fff;">
-                                   <children>
-                                       <Label alignment="CENTER_RIGHT" layoutX="134.0" layoutY="11.0" prefHeight="20.0" prefWidth="108.0" style="-fx-text-fill: #898789;" text="MALES">
-                                           <font>
-                                               <Font name="Bauhaus 93" size="18.0" />
-                                           </font>
-                                       </Label>
-                                       <Pane layoutX="16.0" layoutY="-30.0" prefHeight="101.0" prefWidth="94.0" style="-fx-background-color: #009FC5;">
-                                           <children>
-                                               <ImageView fitHeight="55.0" fitWidth="51.0" layoutX="22.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
-                                                   <image>
-                                                       <Image url="@../image/home%20icons/icons8_male_26px.png" />
-                                                   </image>
-                                               </ImageView>
-                                           </children>
-                                       </Pane>
-                                       <Line endX="133.0" fill="#009fc5" layoutX="105.0" layoutY="95.0" startX="-89.0" stroke="#009fc5" strokeWidth="5.0" />
-                                    <Label layoutX="22.0" layoutY="105.0" text="Total number of males students">
-                                       <font>
-                                           <Font name="System Bold" size="14.0" />
-                                       </font>
-                                    </Label>
-                                       <Label fx:id="totalMalesCountLabel" alignment="CENTER_RIGHT" layoutX="150.0" layoutY="31.0" prefHeight="55.0" prefWidth="94.0" text="103">
-                                           <font>
-                                               <Font name="System Bold" size="36.0" />
-                                           </font>
-                                       </Label>
-                                 </children>
-                              </Pane>
-                           </children>
-                        </HBox>
-                        <HBox alignment="BOTTOM_CENTER" maxHeight="-Infinity" prefHeight="212.0" prefWidth="282.0">
-                           <children>
-                               <Pane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="131.0" prefWidth="257.0" style="-fx-background-color: #fff;">
-                                   <children>
-                                       <Label alignment="CENTER_RIGHT" layoutX="134.0" layoutY="11.0" prefHeight="20.0" prefWidth="108.0" style="-fx-text-fill: #898789;" text="FEMALES">
-                                           <font>
-                                               <Font name="Bauhaus 93" size="18.0" />
-                                           </font>
-                                       </Label>
-                                       <Pane layoutX="16.0" layoutY="-30.0" prefHeight="101.0" prefWidth="94.0" style="-fx-background-color: #00A795;">
-                                           <children>
-                                               <ImageView fitHeight="55.0" fitWidth="51.0" layoutX="23.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
-                                                   <image>
-                                                       <Image url="@../image/home%20icons/icons8_female_50px.png" />
-                                                   </image>
-                                               </ImageView>
-                                           </children>
-                                       </Pane>
-                                       <Line endX="133.0" fill="#00a795" layoutX="105.0" layoutY="95.0" startX="-89.0" stroke="#00a795" strokeWidth="5.0" />
-                                    <Label layoutX="22.0" layoutY="105.0" text="Total number of female students">
-                                       <font>
-                                           <Font name="System Bold" size="14.0" />
-                                       </font>
-                                    </Label>
-                                       <Label fx:id="totalFemaleCountLabel" alignment="CENTER_RIGHT" layoutX="150.0" layoutY="31.0" prefHeight="55.0" prefWidth="94.0" text="103">
-                                           <font>
-                                               <Font name="System Bold" size="36.0" />
-                                           </font>
-                                       </Label>
-                                 </children>
-                              </Pane>
-                           </children>
-                        </HBox>
-                        <HBox alignment="BOTTOM_CENTER" maxHeight="-Infinity" prefHeight="212.0" prefWidth="282.0">
-                           <children>
-                               <Pane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="131.0" prefWidth="257.0" style="-fx-background-color: #fff;">
-                                   <children>
-                                       <Label alignment="CENTER_RIGHT" layoutX="134.0" layoutY="11.0" prefHeight="20.0" prefWidth="108.0" style="-fx-text-fill: #898789;" text="TARGET">
-                                           <font>
-                                               <Font name="Bauhaus 93" size="18.0" />
-                                           </font>
-                                       </Label>
-                                       <Pane layoutX="16.0" layoutY="-30.0" prefHeight="101.0" prefWidth="94.0" style="-fx-background-color: #ED6B4A;">
-                                           <children>
-                                               <ImageView fitHeight="55.0" fitWidth="51.0" layoutX="21.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
-                                                   <image>
-                                                       <Image url="@../image/home%20icons/icons8_target_50px.png" />
-                                                   </image>
-                                               </ImageView>
-                                           </children>
-                                       </Pane>
-                                       <Line endX="133.0" fill="#ed6b4a" layoutX="105.0" layoutY="95.0" startX="-89.0" stroke="#ed6b4a" strokeWidth="5.0" />
-                                    <Label layoutX="28.0" layoutY="105.0" text="Total number of registerations">
-                                       <font>
-                                           <Font name="System Bold" size="14.0" />
-                                       </font>
-                                    </Label>
-                                       <Label fx:id="targetCountLabel" alignment="CENTER_RIGHT" layoutX="150.0" layoutY="31.0" prefHeight="55.0" prefWidth="94.0" text="103">
-                                           <font>
-                                               <Font name="System Bold" size="36.0" />
-                                           </font>
-                                       </Label>
-                                 </children>
-                              </Pane>
-                           </children>
-                        </HBox>
-                     </children>
-                     <padding>
-                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                     </padding>
-                  </HBox>
-                  <VBox prefHeight="352.0" prefWidth="800.0" VBox.vgrow="ALWAYS">
-                     <children>
-                        <HBox prefHeight="100.0" prefWidth="200.0" spacing="20.0" VBox.vgrow="ALWAYS">
-                           <children>
-                              <VBox maxHeight="-Infinity" prefHeight="398.0" prefWidth="257.0">
-                                 <children>
-                                     <VBox maxHeight="-Infinity" prefHeight="141.0" prefWidth="257.0" style="-fx-background-color: #009EC4; -fx-background-radius: 10 10 0 0;" VBox.vgrow="ALWAYS">
-                                         <children>
-                                             <AnchorPane prefHeight="154.0" prefWidth="257.0">
-                                                 <children>
-                                                     <Circle fill="#d0c4c0" layoutX="49.0" layoutY="59.0" radius="40.0" stroke="#d0c4c0" strokeType="INSIDE" />
-                                                     <Label fx:id="usernameLabel" layoutX="98.0" layoutY="29.0" prefHeight="36.0" prefWidth="155.0" text="Ahmad" textFill="WHITE">
-                                                         <font>
-                                                             <Font name="Britannic Bold" size="25.0" />
-                                                         </font>
-                                                     </Label>
-                                                     <Label layoutX="102.0" layoutY="71.0" prefHeight="19.0" prefWidth="114.0" text="Logged User" textFill="WHITE">
-                                                         <font>
-                                                             <Font name="Bauhaus 93" size="18.0" />
-                                                         </font>
-                                                     </Label>
-                                                 </children>
-                                          </AnchorPane>
-                                       </children>
-                                    </VBox>
-                                     <VBox prefHeight="240.0" prefWidth="257.0" style="-fx-background-color: #fff;" VBox.vgrow="ALWAYS">
-                                         <children>
-                                             <HBox alignment="CENTER_LEFT" prefHeight="39.0" prefWidth="257.0">
-                                                 <children>
-                                                     <ImageView fitHeight="28.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
-                                                         <image>
-                                                             <Image url="@../image/home%20icons/sub%20icons/icons8_checked_user_male_26px_1.png" />
-                                                         </image>
-                                                     </ImageView>
-                                                     <Label fx:id="roleLabel" text="Admin" textFill="#757a88">
-                                                         <padding>
-                                                             <Insets left="10.0" />
-                                                   </padding>
-                                                   <font>
-                                                       <Font size="14.0" />
-                                                   </font>
+    <children>
+        <AnchorPane fx:id="secondaryPane" prefHeight="616.0" prefWidth="1142.0" style="-fx-background-color: #E5E4E5;">
+            <children>
+                <VBox layoutX="239.0" layoutY="115.0" prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <children>
+                        <HBox alignment="BOTTOM_LEFT" prefHeight="113.0" prefWidth="1142.0" VBox.vgrow="ALWAYS">
+                            <children>
+                                <HBox alignment="BOTTOM_CENTER" maxHeight="-Infinity" prefHeight="212.0" prefWidth="282.0">
+                                    <children>
+                                        <Pane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="131.0" prefWidth="257.0" style="-fx-background-color: #fff;">
+                                            <children>
+                                                <Label alignment="CENTER_RIGHT" layoutX="134.0" layoutY="11.0" prefHeight="20.0" prefWidth="108.0" style="-fx-text-fill: #898789;" text="REGISTERED">
+                                                    <font>
+                                                        <Font name="Bauhaus 93" size="18.0" />
+                                                    </font>
                                                 </Label>
-                                             </children>
-                                             <padding>
-                                                 <Insets left="15.0" />
-                                             </padding>
-                                          </HBox>
-                                          <HBox alignment="CENTER_LEFT" prefHeight="39.0" prefWidth="257.0">
-                                             <children>
-                                                 <ImageView fitHeight="25.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
-                                                     <image>
-                                                         <Image url="@../image/home%20icons/sub%20icons/icons8_user_24px_1.png" />
-                                                     </image>
-                                                 </ImageView>
-                                                <Label fx:id="fullNameLabel" text="Ahmad Muhammad" textFill="#757a88">
-                                                   <padding>
-                                                       <Insets left="10.0" />
-                                                   </padding>
-                                                   <font>
-                                                       <Font size="14.0" />
-                                                   </font>
+                                                <Pane layoutX="16.0" layoutY="-30.0" prefHeight="101.0" prefWidth="94.0" style="-fx-background-color: #0081BE;">
+                                                    <children>
+                                                        <ImageView fitHeight="55.0" fitWidth="51.0" layoutX="22.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
+                                                            <image>
+                                                                <Image url="@../image/home%20icons/icons8_add_user_male_32px.png" />
+                                                            </image>
+                                                        </ImageView>
+                                                    </children>
+                                                </Pane>
+                                                <Line endX="133.0" fill="#6ab069" layoutX="105.0" layoutY="95.0" startX="-89.0" stroke="#6ab069" strokeWidth="5.0" />
+                                                <Label layoutX="12.0" layoutY="105.0" text="Total number of registered students">
+                                                    <font>
+                                                        <Font name="System Bold" size="14.0" />
+                                                    </font>
                                                 </Label>
-                                             </children>
-                                             <padding>
-                                                 <Insets left="15.0" />
-                                             </padding>
-                                          </HBox>
-                                          <HBox alignment="CENTER_LEFT" prefHeight="39.0" prefWidth="257.0">
-                                             <children>
-                                                 <ImageView fitHeight="21.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
-                                                     <image>
-                                                         <Image url="@../image/home%20icons/sub%20icons/icons8_secured_letter_30px.png" />
-                                                     </image>
-                                                 </ImageView>
-                                                 <Label fx:id="emailLabel" text="Ahmadmuhammadmak@gmail.com" textFill="#757a88">
-                                                     <padding>
-                                                         <Insets left="10.0" />
-                                                     </padding>
-                                                     <font>
-                                                         <Font size="14.0" />
-                                                     </font>
-                                                 </Label>
-                                             </children>
-                                             <padding>
-                                                 <Insets left="15.0" />
-                                             </padding>
-                                          </HBox>
-                                          <HBox alignment="CENTER_LEFT" prefHeight="39.0" prefWidth="257.0">
-                                             <children>
-                                                 <ImageView fitHeight="20.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
-                                                     <image>
-                                                         <Image url="@../image/home%20icons/sub%20icons/icons8_phone_24px.png" />
-                                                     </image>
-                                                 </ImageView>
-                                                <Label fx:id="mobileNoLabel" text="+234 90502 73391" textFill="#757a88">
-                                                   <padding>
-                                                       <Insets left="10.0" />
-                                                   </padding>
-                                                   <font>
-                                                       <Font size="14.0" />
-                                                   </font>
+                                                <Label fx:id="totalRegisteredCountLabel" alignment="CENTER_RIGHT" layoutX="150.0" layoutY="31.0" prefHeight="55.0" prefWidth="94.0" text="103">
+                                                    <font>
+                                                        <Font name="System Bold" size="36.0" />
+                                                    </font>
                                                 </Label>
-                                             </children>
-                                             <padding>
-                                                 <Insets left="15.0" />
-                                             </padding>
-                                          </HBox>
-                                             <Button fx:id="editUserBtn" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#onEditUser" prefHeight="53.0" prefWidth="55.0" style="-fx-background-color: #D55F3B; -fx-background-radius: 50;">
-                                                 <graphic>
-                                                     <ImageView fitHeight="28.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
-                                                         <image>
-                                                             <Image url="@../image/home%20icons/sub%20icons/icons8_edit_24px.png" />
-                                                         </image>
-                                                     </ImageView>
-                                                 </graphic>
-                                                 <VBox.margin>
-                                                     <Insets left="190.0" top="26.0" />
-                                                 </VBox.margin>
-                                             <cursor>
-                                                 <Cursor fx:constant="HAND" />
-                                             </cursor>
-                                          </Button>
-                                       </children>
-                                       <padding>
-                                           <Insets top="5.0" />
-                                       </padding>
-                                    </VBox>
-                                 </children>
-                              </VBox>
-                              <VBox maxHeight="-Infinity" prefHeight="397.0" prefWidth="257.0">
-                                 <children>
-                                     <VBox alignment="CENTER" maxHeight="-Infinity" prefHeight="70.0" prefWidth="257.0" style="-fx-background-color: #009884; -fx-background-radius: 10 10 0 0;" VBox.vgrow="ALWAYS">
-                                         <children>
-                                             <Label prefHeight="30.0" prefWidth="144.0" text="Departments" textFill="WHITE">
-                                                 <font>
-                                                     <Font name="Britannic Bold" size="24.0" />
-                                                 </font>
-                                             </Label>
-                                         </children>
-                                     </VBox>
-                                    <StackPane VBox.vgrow="ALWAYS">
-                                       <children>
-                                           <VBox alignment="TOP_CENTER" prefHeight="170.0" prefWidth="241.0" style="-fx-background-color: #fff;">
-                                               <children>
-                                                   <JFXListView fx:id="departmentsListView" focusTraversable="false" maxWidth="-Infinity" prefHeight="283.0" prefWidth="238.0">
-                                                   <contextMenu>
-                                                      <ContextMenu>
-                                                        <items>
-                                                          <MenuItem mnemonicParsing="false" onAction="#refreshDept" text="refresh" />
-                                                          <MenuItem mnemonicParsing="false" onAction="#deleteDept" text="delete" />
-                                                        </items>
-                                                      </ContextMenu>
-                                                   </contextMenu>
-                                                </JFXListView>
-                                               </children>
-                                               <padding>
-                                                   <Insets top="5.0" />
-                                               </padding>
-                                           </VBox>
-                                           <Button fx:id="addDepartmentBtn" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#onAddDepartment" prefHeight="53.0" prefWidth="55.0" style="-fx-background-color: #D55F3B; -fx-background-radius: 50;">
-                                               <graphic>
-                                                   <ImageView fitHeight="31.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
-                                                       <image>
-                                                           <Image url="@../image/home%20icons/sub%20icons/icons8_plus_math_26px.png" />
-                                                       </image>
-                                                   </ImageView>
-                                               </graphic>
-                                               <StackPane.margin>
-                                                   <Insets left="170.0" top="245.0" />
-                                               </StackPane.margin>
-                                             <cursor>
-                                                 <Cursor fx:constant="HAND" />
-                                             </cursor>
-                                          </Button>
-                                       </children>
-                                    </StackPane>
-                                 </children>
-                              </VBox>
-                           </children>
-                           <padding>
-                               <Insets bottom="10.0" left="25.0" right="10.0" top="10.0" />
-                           </padding>
+                                            </children>
+                                        </Pane>
+                                    </children>
+                                </HBox>
+                                <HBox alignment="BOTTOM_CENTER" maxHeight="-Infinity" prefHeight="212.0" prefWidth="282.0">
+                                    <children>
+                                        <Pane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="131.0" prefWidth="257.0" style="-fx-background-color: #fff;">
+                                            <children>
+                                                <Label alignment="CENTER_RIGHT" layoutX="134.0" layoutY="11.0" prefHeight="20.0" prefWidth="108.0" style="-fx-text-fill: #898789;" text="MALES">
+                                                    <font>
+                                                        <Font name="Bauhaus 93" size="18.0" />
+                                                    </font>
+                                                </Label>
+                                                <Pane layoutX="16.0" layoutY="-30.0" prefHeight="101.0" prefWidth="94.0" style="-fx-background-color: #009FC5;">
+                                                    <children>
+                                                        <ImageView fitHeight="55.0" fitWidth="51.0" layoutX="22.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
+                                                            <image>
+                                                                <Image url="@../image/home%20icons/icons8_male_26px.png" />
+                                                            </image>
+                                                        </ImageView>
+                                                    </children>
+                                                </Pane>
+                                                <Line endX="133.0" fill="#009fc5" layoutX="105.0" layoutY="95.0" startX="-89.0" stroke="#009fc5" strokeWidth="5.0" />
+                                                <Label layoutX="22.0" layoutY="105.0" text="Total number of males students">
+                                                    <font>
+                                                        <Font name="System Bold" size="14.0" />
+                                                    </font>
+                                                </Label>
+                                                <Label fx:id="totalMalesCountLabel" alignment="CENTER_RIGHT" layoutX="150.0" layoutY="31.0" prefHeight="55.0" prefWidth="94.0" text="103">
+                                                    <font>
+                                                        <Font name="System Bold" size="36.0" />
+                                                    </font>
+                                                </Label>
+                                            </children>
+                                        </Pane>
+                                    </children>
+                                </HBox>
+                                <HBox alignment="BOTTOM_CENTER" maxHeight="-Infinity" prefHeight="212.0" prefWidth="282.0">
+                                    <children>
+                                        <Pane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="131.0" prefWidth="257.0" style="-fx-background-color: #fff;">
+                                            <children>
+                                                <Label alignment="CENTER_RIGHT" layoutX="134.0" layoutY="11.0" prefHeight="20.0" prefWidth="108.0" style="-fx-text-fill: #898789;" text="FEMALES">
+                                                    <font>
+                                                        <Font name="Bauhaus 93" size="18.0" />
+                                                    </font>
+                                                </Label>
+                                                <Pane layoutX="16.0" layoutY="-30.0" prefHeight="101.0" prefWidth="94.0" style="-fx-background-color: #00A795;">
+                                                    <children>
+                                                        <ImageView fitHeight="55.0" fitWidth="51.0" layoutX="23.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
+                                                            <image>
+                                                                <Image url="@../image/home%20icons/icons8_female_50px.png" />
+                                                            </image>
+                                                        </ImageView>
+                                                    </children>
+                                                </Pane>
+                                                <Line endX="133.0" fill="#00a795" layoutX="105.0" layoutY="95.0" startX="-89.0" stroke="#00a795" strokeWidth="5.0" />
+                                                <Label layoutX="22.0" layoutY="105.0" text="Total number of female students">
+                                                    <font>
+                                                        <Font name="System Bold" size="14.0" />
+                                                    </font>
+                                                </Label>
+                                                <Label fx:id="totalFemaleCountLabel" alignment="CENTER_RIGHT" layoutX="150.0" layoutY="31.0" prefHeight="55.0" prefWidth="94.0" text="103">
+                                                    <font>
+                                                        <Font name="System Bold" size="36.0" />
+                                                    </font>
+                                                </Label>
+                                            </children>
+                                        </Pane>
+                                    </children>
+                                </HBox>
+                                <HBox alignment="BOTTOM_CENTER" maxHeight="-Infinity" prefHeight="212.0" prefWidth="282.0">
+                                    <children>
+                                        <Pane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="131.0" prefWidth="257.0" style="-fx-background-color: #fff;">
+                                            <children>
+                                                <Label alignment="CENTER_RIGHT" layoutX="134.0" layoutY="11.0" prefHeight="20.0" prefWidth="108.0" style="-fx-text-fill: #898789;" text="TARGET">
+                                                    <font>
+                                                        <Font name="Bauhaus 93" size="18.0" />
+                                                    </font>
+                                                </Label>
+                                                <Pane layoutX="16.0" layoutY="-30.0" prefHeight="101.0" prefWidth="94.0" style="-fx-background-color: #ED6B4A;">
+                                                    <children>
+                                                        <ImageView fitHeight="55.0" fitWidth="51.0" layoutX="21.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
+                                                            <image>
+                                                                <Image url="@../image/home%20icons/icons8_target_50px.png" />
+                                                            </image>
+                                                        </ImageView>
+                                                    </children>
+                                                </Pane>
+                                                <Line endX="133.0" fill="#ed6b4a" layoutX="105.0" layoutY="95.0" startX="-89.0" stroke="#ed6b4a" strokeWidth="5.0" />
+                                                <Label layoutX="28.0" layoutY="105.0" text="Total number of registerations">
+                                                    <font>
+                                                        <Font name="System Bold" size="14.0" />
+                                                    </font>
+                                                </Label>
+                                                <Label fx:id="targetCountLabel" alignment="CENTER_RIGHT" layoutX="150.0" layoutY="31.0" prefHeight="55.0" prefWidth="94.0" text="103">
+                                                    <font>
+                                                        <Font name="System Bold" size="36.0" />
+                                                    </font>
+                                                </Label>
+                                            </children>
+                                        </Pane>
+                                    </children>
+                                </HBox>
+                            </children>
+                            <padding>
+                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                            </padding>
                         </HBox>
-                     </children>
-                  </VBox>
-               </children>
-            </VBox>
-         </children>
-      </AnchorPane>
-   </children>
+                        <VBox prefHeight="352.0" prefWidth="800.0" VBox.vgrow="ALWAYS">
+                            <children>
+                                <HBox prefHeight="100.0" prefWidth="200.0" spacing="20.0" VBox.vgrow="ALWAYS">
+                                    <children>
+                                        <VBox maxHeight="-Infinity" prefHeight="398.0" prefWidth="257.0">
+                                            <children>
+                                                <VBox maxHeight="-Infinity" prefHeight="141.0" prefWidth="257.0" style="-fx-background-color: #009EC4; -fx-background-radius: 10 10 0 0;" VBox.vgrow="ALWAYS">
+                                                    <children>
+                                                        <AnchorPane prefHeight="154.0" prefWidth="257.0">
+                                                            <children>
+                                                                <Circle fill="#d0c4c0" layoutX="49.0" layoutY="59.0" radius="40.0" stroke="#d0c4c0" strokeType="INSIDE" />
+                                                                <Label fx:id="usernameLabel" layoutX="98.0" layoutY="29.0" prefHeight="36.0" prefWidth="155.0" text="Ahmad" textFill="WHITE">
+                                                                    <font>
+                                                                        <Font name="Britannic Bold" size="25.0" />
+                                                                    </font>
+                                                                </Label>
+                                                                <Label layoutX="102.0" layoutY="71.0" prefHeight="19.0" prefWidth="114.0" text="Logged User" textFill="WHITE">
+                                                                    <font>
+                                                                        <Font name="Bauhaus 93" size="18.0" />
+                                                                    </font>
+                                                                </Label>
+                                                            </children>
+                                                        </AnchorPane>
+                                                    </children>
+                                                </VBox>
+                                                <VBox prefHeight="240.0" prefWidth="257.0" style="-fx-background-color: #fff;" VBox.vgrow="ALWAYS">
+                                                    <children>
+                                                        <HBox alignment="CENTER_LEFT" prefHeight="39.0" prefWidth="257.0">
+                                                            <children>
+                                                                <ImageView fitHeight="28.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                                                    <image>
+                                                                        <Image url="@../image/home%20icons/sub%20icons/icons8_checked_user_male_26px_1.png" />
+                                                                    </image>
+                                                                </ImageView>
+                                                                <Label fx:id="roleLabel" text="Admin" textFill="#757a88">
+                                                                    <padding>
+                                                                        <Insets left="10.0" />
+                                                                    </padding>
+                                                                    <font>
+                                                                        <Font size="14.0" />
+                                                                    </font>
+                                                                </Label>
+                                                            </children>
+                                                            <padding>
+                                                                <Insets left="15.0" />
+                                                            </padding>
+                                                        </HBox>
+                                                        <HBox alignment="CENTER_LEFT" prefHeight="39.0" prefWidth="257.0">
+                                                            <children>
+                                                                <ImageView fitHeight="25.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
+                                                                    <image>
+                                                                        <Image url="@../image/home%20icons/sub%20icons/icons8_user_24px_1.png" />
+                                                                    </image>
+                                                                </ImageView>
+                                                                <Label fx:id="fullNameLabel" text="Ahmad Muhammad" textFill="#757a88">
+                                                                    <padding>
+                                                                        <Insets left="10.0" />
+                                                                    </padding>
+                                                                    <font>
+                                                                        <Font size="14.0" />
+                                                                    </font>
+                                                                </Label>
+                                                            </children>
+                                                            <padding>
+                                                                <Insets left="15.0" />
+                                                            </padding>
+                                                        </HBox>
+                                                        <HBox alignment="CENTER_LEFT" prefHeight="39.0" prefWidth="257.0">
+                                                            <children>
+                                                                <ImageView fitHeight="21.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                                                    <image>
+                                                                        <Image url="@../image/home%20icons/sub%20icons/icons8_secured_letter_30px.png" />
+                                                                    </image>
+                                                                </ImageView>
+                                                                <Label fx:id="emailLabel" text="Ahmadmuhammadmak@gmail.com" textFill="#757a88">
+                                                                    <padding>
+                                                                        <Insets left="10.0" />
+                                                                    </padding>
+                                                                    <font>
+                                                                        <Font size="14.0" />
+                                                                    </font>
+                                                                </Label>
+                                                            </children>
+                                                            <padding>
+                                                                <Insets left="15.0" />
+                                                            </padding>
+                                                        </HBox>
+                                                        <HBox alignment="CENTER_LEFT" prefHeight="39.0" prefWidth="257.0">
+                                                            <children>
+                                                                <ImageView fitHeight="20.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
+                                                                    <image>
+                                                                        <Image url="@../image/home%20icons/sub%20icons/icons8_phone_24px.png" />
+                                                                    </image>
+                                                                </ImageView>
+                                                                <Label fx:id="mobileNoLabel" text="+234 90502 73391" textFill="#757a88">
+                                                                    <padding>
+                                                                        <Insets left="10.0" />
+                                                                    </padding>
+                                                                    <font>
+                                                                        <Font size="14.0" />
+                                                                    </font>
+                                                                </Label>
+                                                            </children>
+                                                            <padding>
+                                                                <Insets left="15.0" />
+                                                            </padding>
+                                                        </HBox>
+                                                        <Button fx:id="editUserBtn" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#onEditUser" prefHeight="53.0" prefWidth="55.0" style="-fx-background-color: #D55F3B; -fx-background-radius: 50;">
+                                                            <graphic>
+                                                                <ImageView fitHeight="28.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                                                    <image>
+                                                                        <Image url="@../image/home%20icons/sub%20icons/icons8_edit_24px.png" />
+                                                                    </image>
+                                                                </ImageView>
+                                                            </graphic>
+                                                            <VBox.margin>
+                                                                <Insets left="190.0" top="26.0" />
+                                                            </VBox.margin>
+                                                            <cursor>
+                                                                <Cursor fx:constant="HAND" />
+                                                            </cursor>
+                                                        </Button>
+                                                    </children>
+                                                    <padding>
+                                                        <Insets top="5.0" />
+                                                    </padding>
+                                                </VBox>
+                                            </children>
+                                 <effect>
+                                    <DropShadow />
+                                 </effect>
+                                        </VBox>
+                                        <VBox maxHeight="-Infinity" prefHeight="397.0" prefWidth="257.0">
+                                            <children>
+                                                <VBox alignment="CENTER" maxHeight="-Infinity" prefHeight="70.0" prefWidth="257.0" style="-fx-background-color: #009884; -fx-background-radius: 10 10 0 0;" VBox.vgrow="ALWAYS">
+                                                    <children>
+                                                        <Label prefHeight="30.0" prefWidth="144.0" text="Departments" textFill="WHITE">
+                                                            <font>
+                                                                <Font name="Britannic Bold" size="24.0" />
+                                                            </font>
+                                                        </Label>
+                                                    </children>
+                                                </VBox>
+                                                <StackPane VBox.vgrow="ALWAYS">
+                                                    <children>
+                                                        <VBox alignment="TOP_CENTER" prefHeight="170.0" prefWidth="241.0" style="-fx-background-color: #fff;">
+                                                            <children>
+                                                                <JFXListView fx:id="departmentsListView" focusTraversable="false" maxWidth="-Infinity" prefHeight="283.0" prefWidth="238.0">
+                                                                    <contextMenu>
+                                                                        <ContextMenu>
+                                                                            <items>
+                                                                                <MenuItem mnemonicParsing="false" onAction="#refreshDept" text="refresh" />
+                                                                                <MenuItem mnemonicParsing="false" onAction="#deleteDept" text="delete" />
+                                                                            </items>
+                                                                        </ContextMenu>
+                                                                    </contextMenu>
+                                                                </JFXListView>
+                                                            </children>
+                                                            <padding>
+                                                                <Insets top="5.0" />
+                                                            </padding>
+                                                        </VBox>
+                                                        <Button fx:id="addDepartmentBtn" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#onAddDepartment" prefHeight="53.0" prefWidth="55.0" style="-fx-background-color: #D55F3B; -fx-background-radius: 50;">
+                                                            <graphic>
+                                                                <ImageView fitHeight="31.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                                                    <image>
+                                                                        <Image url="@../image/home%20icons/sub%20icons/icons8_plus_math_26px.png" />
+                                                                    </image>
+                                                                </ImageView>
+                                                            </graphic>
+                                                            <StackPane.margin>
+                                                                <Insets left="170.0" top="245.0" />
+                                                            </StackPane.margin>
+                                                            <cursor>
+                                                                <Cursor fx:constant="HAND" />
+                                                            </cursor>
+                                                        </Button>
+                                                    </children>
+                                                </StackPane>
+                                            </children>
+                                 <effect>
+                                    <DropShadow />
+                                 </effect>
+                                        </VBox>
+                                    </children>
+                                    <padding>
+                                        <Insets bottom="10.0" left="25.0" right="10.0" top="10.0" />
+                                    </padding>
+                                </HBox>
+                            </children>
+                        </VBox>
+                    </children>
+                </VBox>
+            </children>
+        </AnchorPane>
+    </children>
 </StackPane>

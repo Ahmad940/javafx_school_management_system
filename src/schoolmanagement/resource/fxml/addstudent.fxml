@@ -10,7 +10,7 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 <StackPane xmlns:fx="http://javafx.com/fxml/1" fx:id="mainPane" xmlns="http://javafx.com/javafx/11.0.1"
-           fx:controller="schoolmanagement.java.controllers.HomeController">
+           fx:controller="schoolmanagement.java.controllers.AddStudentController">
     <children>
         <AnchorPane fx:id="secondaryPane" prefHeight="616.0" prefWidth="1142.0" style="-fx-background-color: #E5E4E5;">
             <children>

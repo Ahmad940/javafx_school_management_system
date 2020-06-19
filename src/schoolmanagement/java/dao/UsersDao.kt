@@ -3,6 +3,7 @@ package schoolmanagement.java.dao
 import org.springframework.jdbc.core.JdbcTemplate
 import schoolmanagement.java.models.Users
 
+
 class UsersDao {
     private var jdbcTemplate: JdbcTemplate? = null
 
@@ -20,6 +21,28 @@ class UsersDao {
         val query = "SELECT COUNT(USERNAME) FROM users where username = ?"
         val exists = jdbcTemplate!!.queryForObject(query, Int::class.java, username)
         return exists == 1
+    }
+
+    //    public int updateEmployee(Employee e){
+//        String query="update employee set
+//        name='"+e.getName()+"',salary='"+e.getSalary()+"' where id='"+e.getId()+"' ";
+//        return jdbcTemplate.update(query);
+//    }
+
+    fun updateUser(
+            userName: String, firstName: String, lastName: String,
+            email: String, mobileNo: String
+    ): Boolean? {
+        val query = "update users set firstName = ?, lastName = ?," +
+                "email = ?, mobileNumber = ? where userName = ?"
+        return jdbcTemplate!!.execute(query) { ps ->
+            ps.setString(1, firstName)
+            ps.setString(2, lastName)
+            ps.setString(3, email)
+            ps.setString(4, mobileNo)
+            ps.setString(5, userName)
+            ps.execute()
+        }
     }
 
     val allUsers: List<Users>
@@ -57,6 +80,7 @@ class UsersDao {
             ps.execute()
         }
     }
+
 
     fun getUser(username: String): List<Users> {
         val sql = "select * from users where `username` = '$username'"
