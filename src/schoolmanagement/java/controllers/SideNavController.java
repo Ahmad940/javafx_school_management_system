@@ -24,7 +24,7 @@ public class SideNavController {
     public void initialize() {
         try {
             homePane = FXMLLoader.load(getClass().getResource(Directories.HOME_FXML_DIR));
-            addPane = FXMLLoader.load(getClass().getResource(Directories.HOME_FXML_DIR));
+            addPane = FXMLLoader.load(getClass().getResource(Directories.ADD_STUDENT_FXML_DIR));
             viewPane = FXMLLoader.load(getClass().getResource(Directories.HOME_FXML_DIR));
         } catch (IOException e) {
             System.out.println(e.getMessage());
