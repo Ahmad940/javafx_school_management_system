@@ -33,8 +33,6 @@ import schoolmanagement.java.utils.Directories;
 import schoolmanagement.java.utils.Validators;
 
 import java.io.IOException;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public class SignUpController {
     @FXML
@@ -187,11 +185,6 @@ public class SignUpController {
 
     @FXML
     public void handleSignUpBtn(ActionEvent actionEvent) {
-
-        Pattern pattern = Pattern.compile("\\w+@[a-zA-Z_]+?\\.[a-zA-Z]{2,6}");
-        Matcher matcher = pattern.matcher(emailField.getText());
-        boolean emailIsValid = matcher.matches();
-
         String password = DigestUtils.sha1Hex(passwordTextField.getText());
 
         if (usernameField.getText().isEmpty() || usernameField.getText().trim().isEmpty() ||
@@ -205,7 +198,7 @@ public class SignUpController {
             return;
         }
 
-        if (!emailIsValid) {
+        if (!Validators.INSTANCE.isValidEmail(emailField.getText())) {
             Alerts.INSTANCE.jfxBluredAlert(signUpBtn, detailsPane, "Error", "Invalid Email");
             return;
         }

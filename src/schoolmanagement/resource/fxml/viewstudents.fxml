@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<StackPane xmlns:fx="http://javafx.com/fxml/1" fx:id="mainPane" xmlns="http://javafx.com/javafx/11.0.1"
+           fx:controller="schoolmanagement.java.controllers.ViewStudentsController">
+   <AnchorPane fx:id="secondaryPane" prefHeight="616.0" prefWidth="1142.0" style="-fx-background-color: #E5E4E5;">
+      <HBox focusTraversable="true" prefHeight="100.0" prefWidth="200.0" spacing="50.0"
+            style="-fx-background-color: #E5E4E5;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+            AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <padding>
+            <Insets bottom="40.0" left="45.0" top="50.0"/>
+         </padding>
+         <children>
+            <VBox prefHeight="526.0" prefWidth="683.0">
+               <children>
+                  <HBox alignment="TOP_RIGHT" prefHeight="140.0" prefWidth="683.0"
+                        style="-fx-background-color: #488BB5; -fx-background-radius: 5;">
+                     <children>
+                        <VBox alignment="CENTER_LEFT" focusTraversable="true" prefHeight="84.0" prefWidth="509.0">
+                           <children>
+                              <Label prefHeight="6.0" prefWidth="75.0" text="Filter By:" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="18.0"/>
+                                 </font>
+                              </Label>
+                              <HBox alignment="CENTER_LEFT" prefHeight="38.0" prefWidth="509.0" spacing="50.0">
+                                 <children>
+                                    <JFXRadioButton fx:id="idRadioBtn"
+                                                    style="-jfx-selected-color: #EB674A; -jfx-unselected-color: #fff;"
+                                                    text="Id" textFill="WHITE">
+                                       <toggleGroup>
+                                          <ToggleGroup fx:id="filterGroup"/>
+                                       </toggleGroup>
+                                    </JFXRadioButton>
+                                    <JFXRadioButton fx:id="namesRadioBtn"
+                                                    style="-jfx-selected-color: #EB674A; -jfx-unselected-color: #fff;"
+                                                    text="Names" textFill="WHITE" toggleGroup="$filterGroup"/>
+                                    <JFXTextField fx:id="searchField" labelFloat="true" prefHeight="25.0"
+                                                  prefWidth="158.0" promptText="Search By name or id"
+                                                  style="-fx-text-fill: #fff;" unFocusColor="#82b7d4"/>
+                                    <JFXButton fx:id="refreshField" buttonType="RAISED" onAction="#onRefresh"
+                                               style="-fx-background-color: #0068B1;" text="Refresh" textFill="WHITE">
+                                       <graphic>
+                                          <ImageView fitHeight="27.0" fitWidth="24.0" pickOnBounds="true"
+                                                     preserveRatio="true">
+                                             <image>
+                                                <Image url="@../image/view/icons8_refresh_30px.png"/>
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </JFXButton>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <VBox prefHeight="89.0" prefWidth="683.0"/>
+                  <VBox prefHeight="428.0" prefWidth="683.0">
+                     <children>
+                        <JFXTreeTableView fx:id="treeTableView">
+                           <columns>
+                              <TreeTableColumn fx:id="idCol" prefWidth="156.0" text="Id"/>
+                              <TreeTableColumn fx:id="studentNamesCol" prefWidth="276.0" text="Student Names"/>
+                              <TreeTableColumn fx:id="courseEnrolledCol" prefWidth="250.0" text="Course Enrolled"/>
+                           </columns>
+                        </JFXTreeTableView>
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
+            <VBox prefHeight="526.0" prefWidth="295.0"/>
+         </children>
+      </HBox>
+      <Pane layoutX="81.0" layoutY="23.0" prefHeight="107.0" prefWidth="115.0"
+            style="-fx-background-color: #0068AE; -fx-background-radius: 5;" AnchorPane.leftAnchor="81.0"
+            AnchorPane.topAnchor="15.0">
+         <children>
+            <ImageView fitHeight="55.0" fitWidth="60.0" layoutX="29.0" layoutY="28.0" pickOnBounds="true"
+                       preserveRatio="true">
+               <image>
+                  <Image url="@../image/home%20icons/sub%20icons/icons8_find_user_male_60px.png"/>
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+   </AnchorPane>
+</StackPane>

@@ -21,5 +21,6 @@
     <orderEntry type="library" name="jfoenix-0.0.0-SNAPSHOT" level="project" />
     <orderEntry type="library" name="commons-codec-1.14" level="project" />
     <orderEntry type="library" name="KotlinJavaRuntime" level="project" />
+    <orderEntry type="library" name="jfoenix-0.0.0-SNAPSHOT-retrolambda" level="project" />
   </component>
 </module>

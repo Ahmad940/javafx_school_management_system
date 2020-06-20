@@ -25,7 +25,7 @@ public class SideNavController {
         try {
             homePane = FXMLLoader.load(getClass().getResource(Directories.HOME_FXML_DIR));
             addPane = FXMLLoader.load(getClass().getResource(Directories.ADD_STUDENT_FXML_DIR));
-            viewPane = FXMLLoader.load(getClass().getResource(Directories.HOME_FXML_DIR));
+            viewPane = FXMLLoader.load(getClass().getResource(Directories.VIEW_STUDENT_FXML_DIR));
         } catch (IOException e) {
             System.out.println(e.getMessage());
             Logger.getLogger(SideNavController.class.getName()).log(Level.SEVERE, "Could not load fxml files", e);

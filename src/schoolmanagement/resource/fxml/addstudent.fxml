@@ -11,323 +11,325 @@
 <?import javafx.scene.text.*?>
 <StackPane xmlns:fx="http://javafx.com/fxml/1" fx:id="mainPane" xmlns="http://javafx.com/javafx/11.0.1"
            fx:controller="schoolmanagement.java.controllers.AddStudentController">
-   <children>
-      <AnchorPane fx:id="secondaryPane" prefHeight="616.0" prefWidth="1142.0" style="-fx-background-color: #E5E4E5;">
-         <children>
+    <AnchorPane fx:id="secondaryPane" prefHeight="616.0" prefWidth="1142.0" style="-fx-background-color: #E5E4E5;">
+        <children>
             <HBox focusTraversable="true" prefHeight="100.0" prefWidth="200.0" spacing="50.0"
                   style="-fx-background-color: #E5E4E5;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
                   AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-               <children>
-                  <VBox prefHeight="616.0" prefWidth="320.0"
-                        style="-fx-background-color: #fff; -fx-background-radius: 3;">
-                     <effect>
-                        <DropShadow color="#8c8585"/>
-                     </effect>
-                     <children>
-                        <HBox prefHeight="73.0" prefWidth="320.0"/>
-                        <VBox prefHeight="68.0" prefWidth="320.0">
-                           <children>
-                              <JFXTextField fx:id="firstNameField" focusColor="#686b72" labelFloat="true"
-                                            maxWidth="-Infinity" prefHeight="25.0" prefWidth="255.0"
-                                            promptText="First Name"/>
-                           </children>
-                           <padding>
-                              <Insets left="30.0" top="10.0"/>
-                           </padding>
-                        </VBox>
-                        <VBox prefHeight="68.0" prefWidth="320.0">
-                           <children>
-                              <JFXTextField fx:id="lastNameField" focusColor="#686b72" labelFloat="true"
-                                            maxWidth="-Infinity" prefHeight="25.0" prefWidth="255.0"
-                                            promptText="Last Name"/>
-                           </children>
-                           <padding>
-                              <Insets left="30.0" top="10.0"/>
-                           </padding>
-                        </VBox>
-                        <VBox prefHeight="68.0" prefWidth="320.0">
-                           <children>
-                              <JFXTextField fx:id="mobileNoField" focusColor="#686b72" labelFloat="true"
-                                            maxWidth="-Infinity" prefHeight="25.0" prefWidth="255.0"
-                                            promptText="Mobile Number"/>
-                           </children>
-                           <padding>
-                              <Insets left="30.0" top="10.0"/>
-                           </padding>
-                        </VBox>
-                        <VBox prefHeight="68.0" prefWidth="320.0">
-                           <children>
-                              <JFXTextField fx:id="emailAddressField" focusColor="#686b72" labelFloat="true"
-                                            maxWidth="-Infinity" prefHeight="25.0" prefWidth="255.0"
-                                            promptText="Email Address"/>
-                           </children>
-                           <padding>
-                              <Insets left="30.0" top="10.0"/>
-                           </padding>
-                        </VBox>
-                        <VBox prefHeight="65.0" prefWidth="320.0">
-                           <children>
-                              <JFXTextField fx:id="locationField" focusColor="#686b72" labelFloat="true"
-                                            maxWidth="-Infinity" prefHeight="25.0" prefWidth="255.0"
-                                            promptText="Location"/>
-                           </children>
-                           <padding>
-                              <Insets left="30.0" top="10.0"/>
-                           </padding>
-                        </VBox>
-                        <VBox prefHeight="102.0" prefWidth="320.0">
-                           <padding>
-                              <Insets top="10.0"/>
-                           </padding>
-                           <children>
-                              <Label text="Gender">
-                                 <font>
-                                    <Font size="14.0"/>
-                                 </font>
-                                 <VBox.margin>
-                                    <Insets left="30.0"/>
-                                 </VBox.margin>
-                              </Label>
-                              <HBox alignment="CENTER" maxWidth="-Infinity" prefHeight="52.0" prefWidth="320.0"
-                                    spacing="15.0">
-                                 <children>
-                                    <JFXRadioButton fx:id="maleRadio" style="-jfx-selected-color: #0E8157;" text="Male">
-                                       <toggleGroup>
-                                          <ToggleGroup fx:id="gender"/>
-                                       </toggleGroup>
-                                    </JFXRadioButton>
-                                    <JFXRadioButton fx:id="femaleRadio" style="-jfx-selected-color: #0E8157;"
-                                                    text="Female" toggleGroup="$gender"/>
-                                 </children>
-                              </HBox>
-                           </children>
-                        </VBox>
-                     </children>
-                  </VBox>
-                  <VBox prefHeight="616.0" prefWidth="320.0"
-                        style="-fx-background-color: #fff; -fx-background-radius: 3;">
-                     <effect>
-                        <DropShadow color="#8c8585"/>
-                     </effect>
-                     <children>
-                        <HBox prefHeight="92.0" prefWidth="320.0"/>
-                        <VBox prefHeight="96.0" prefWidth="320.0" spacing="10.0">
-                           <children>
-                              <Label text="Regsitartion Date">
-                                 <font>
-                                    <Font size="14.0"/>
-                                 </font>
-                              </Label>
-                              <TextField fx:id="registrationDateField" disable="true" maxWidth="-Infinity"
-                                         prefHeight="35.0" prefWidth="247.0"/>
-                           </children>
-                           <padding>
-                              <Insets left="30.0" top="10.0"/>
-                           </padding>
-                        </VBox>
-                        <VBox prefHeight="36.0" prefWidth="320.0" spacing="10.0">
-                           <padding>
-                              <Insets left="30.0" top="10.0"/>
-                           </padding>
-                           <children>
-                              <Line endX="146.5" startX="-100.0" stroke="#bcb0b0"/>
-                           </children>
-                        </VBox>
-                        <VBox prefHeight="102.0" prefWidth="320.0">
-                           <padding>
-                              <Insets top="10.0"/>
-                           </padding>
-                           <children>
-                              <Label text="Level">
-                                 <font>
-                                    <Font size="14.0"/>
-                                 </font>
-                                 <VBox.margin>
-                                    <Insets left="30.0"/>
-                                 </VBox.margin>
-                              </Label>
-                              <HBox alignment="CENTER" maxWidth="-Infinity" prefHeight="52.0" prefWidth="320.0"
-                                    spacing="15.0">
-                                 <children>
-                                    <JFXRadioButton fx:id="degreeRadio" style="-jfx-selected-color: #0E8157;"
-                                                    text="Degree">
-                                       <toggleGroup>
-                                          <ToggleGroup fx:id="level"/>
-                                       </toggleGroup>
-                                    </JFXRadioButton>
-                                    <JFXRadioButton fx:id="diplomaRadio" style="-jfx-selected-color: #0E8157;"
-                                                    text="Diploma" toggleGroup="$level"/>
-                                    <JFXRadioButton fx:id="certificateRadio" style="-jfx-selected-color: #0E8157;"
-                                                    text="Certificate" toggleGroup="$level"/>
-                                 </children>
-                              </HBox>
-                           </children>
-                        </VBox>
-                        <VBox prefHeight="102.0" prefWidth="320.0">
-                           <padding>
-                              <Insets top="10.0"/>
-                           </padding>
-                           <children>
-                              <HBox alignment="CENTER" maxWidth="-Infinity" prefHeight="52.0" prefWidth="320.0"
-                                    spacing="15.0">
-                                 <children>
-                                    <JFXComboBox fx:id="departmentsComboBox" prefHeight="25.0" prefWidth="264.0"
-                                                 promptText="Departments"/>
-                                 </children>
-                              </HBox>
-                           </children>
-                        </VBox>
-                        <VBox prefHeight="68.0" prefWidth="320.0">
-                           <children>
-                              <JFXTextField fx:id="courseNameField" focusColor="#686b72" labelFloat="true"
-                                            maxWidth="-Infinity" prefHeight="25.0" prefWidth="255.0"
-                                            promptText="Course Name"/>
-                           </children>
-                           <padding>
-                              <Insets left="30.0" top="10.0"/>
-                           </padding>
-                        </VBox>
-                     </children>
-                  </VBox>
-                  <VBox prefHeight="616.0" prefWidth="320.0" spacing="20.0" style="-fx-background-color: transparent;">
-                     <children>
-                        <HBox prefHeight="250.0" prefWidth="320.0">
-                           <children>
-                              <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="10.0"
-                                    style="-fx-background-color: #1D3044;" HBox.hgrow="ALWAYS">
-                                 <children>
-                                    <Label alignment="CENTER" prefHeight="20.0" prefWidth="167.0" text="Amount to pay:"
-                                           textFill="WHITE">
-                                       <font>
-                                          <Font size="14.0"/>
-                                       </font>
+                <children>
+                    <VBox prefHeight="616.0" prefWidth="320.0"
+                          style="-fx-background-color: #fff; -fx-background-radius: 3;">
+                        <effect>
+                            <DropShadow color="#8c8585"/>
+                        </effect>
+                        <children>
+                            <HBox prefHeight="73.0" prefWidth="320.0"/>
+                            <VBox prefHeight="68.0" prefWidth="320.0">
+                                <children>
+                                    <JFXTextField fx:id="firstNameField" focusColor="#686b72" labelFloat="true"
+                                                  maxWidth="-Infinity" prefHeight="25.0" prefWidth="255.0"
+                                                  promptText="First Name"/>
+                                </children>
+                                <padding>
+                                    <Insets left="30.0" top="10.0"/>
+                                </padding>
+                            </VBox>
+                            <VBox prefHeight="68.0" prefWidth="320.0">
+                                <children>
+                                    <JFXTextField fx:id="lastNameField" focusColor="#686b72" labelFloat="true"
+                                                  maxWidth="-Infinity" prefHeight="25.0" prefWidth="255.0"
+                                                  promptText="Last Name"/>
+                                </children>
+                                <padding>
+                                    <Insets left="30.0" top="10.0"/>
+                                </padding>
+                            </VBox>
+                            <VBox prefHeight="68.0" prefWidth="320.0">
+                                <children>
+                                    <JFXTextField fx:id="mobileNoField" focusColor="#686b72" labelFloat="true"
+                                                  maxWidth="-Infinity" prefHeight="25.0" prefWidth="255.0"
+                                                  promptText="Mobile Number"/>
+                                </children>
+                                <padding>
+                                    <Insets left="30.0" top="10.0"/>
+                                </padding>
+                            </VBox>
+                            <VBox prefHeight="68.0" prefWidth="320.0">
+                                <children>
+                                    <JFXTextField fx:id="emailAddressField" focusColor="#686b72" labelFloat="true"
+                                                  maxWidth="-Infinity" prefHeight="25.0" prefWidth="255.0"
+                                                  promptText="Email Address"/>
+                                </children>
+                                <padding>
+                                    <Insets left="30.0" top="10.0"/>
+                                </padding>
+                            </VBox>
+                            <VBox prefHeight="65.0" prefWidth="320.0">
+                                <children>
+                                    <JFXTextField fx:id="locationField" focusColor="#686b72" labelFloat="true"
+                                                  maxWidth="-Infinity" prefHeight="25.0" prefWidth="255.0"
+                                                  promptText="Location"/>
+                                </children>
+                                <padding>
+                                    <Insets left="30.0" top="10.0"/>
+                                </padding>
+                            </VBox>
+                            <VBox prefHeight="102.0" prefWidth="320.0">
+                                <padding>
+                                    <Insets top="10.0"/>
+                                </padding>
+                                <children>
+                                    <Label text="Gender">
+                                        <font>
+                                            <Font size="14.0"/>
+                                        </font>
+                                        <VBox.margin>
+                                            <Insets left="30.0"/>
+                                        </VBox.margin>
                                     </Label>
-                                    <Label alignment="CENTER" prefHeight="27.0" prefWidth="162.0" text="N 200 000"
-                                           textFill="WHITE">
-                                       <font>
-                                          <Font name="System Bold" size="18.0"/>
-                                       </font>
+                                    <HBox alignment="CENTER" maxWidth="-Infinity" prefHeight="52.0" prefWidth="320.0"
+                                          spacing="15.0">
+                                        <children>
+                                            <JFXRadioButton fx:id="maleRadio" style="-jfx-selected-color: #0E8157;"
+                                                            text="Male">
+                                                <toggleGroup>
+                                                    <ToggleGroup fx:id="gender"/>
+                                                </toggleGroup>
+                                            </JFXRadioButton>
+                                            <JFXRadioButton fx:id="femaleRadio" style="-jfx-selected-color: #0E8157;"
+                                                            text="Female" toggleGroup="$gender"/>
+                                        </children>
+                                    </HBox>
+                                </children>
+                            </VBox>
+                        </children>
+                    </VBox>
+                    <VBox prefHeight="616.0" prefWidth="320.0"
+                          style="-fx-background-color: #fff; -fx-background-radius: 3;">
+                        <effect>
+                            <DropShadow color="#8c8585"/>
+                        </effect>
+                        <children>
+                            <HBox prefHeight="92.0" prefWidth="320.0"/>
+                            <VBox prefHeight="96.0" prefWidth="320.0" spacing="10.0">
+                                <children>
+                                    <Label text="Regsitartion Date">
+                                        <font>
+                                            <Font size="14.0"/>
+                                        </font>
                                     </Label>
-                                 </children>
-                              </VBox>
-                              <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" spacing="40.0"
-                                    style="-fx-background-color: #fff;" HBox.hgrow="ALWAYS">
-                                 <children>
-                                    <JFXTextField fx:id="AmmountField" focusColor="#008db4" labelFloat="true"
-                                                  maxWidth="-Infinity" prefHeight="30.0" prefWidth="120.0"
-                                                  promptText="Ammount">
-                                       <font>
-                                          <Font size="14.0"/>
-                                       </font>
-                                    </JFXTextField>
-                                    <JFXTextField fx:id="balanceField" labelFloat="true" maxWidth="-Infinity"
-                                                  prefWidth="120.0" promptText="Balance" text="0.00">
-                                       <font>
-                                          <Font size="14.0"/>
-                                       </font>
-                                    </JFXTextField>
-                                 </children>
-                                 <padding>
-                                    <Insets top="70.0"/>
-                                 </padding>
-                              </VBox>
-                           </children>
-                           <effect>
-                              <DropShadow color="#7c7171"/>
-                           </effect>
-                        </HBox>
-                        <HBox prefHeight="259.0" prefWidth="320.0" style="-fx-background-color: #fff;">
-                           <effect>
-                              <DropShadow color="#796f6f"/>
-                           </effect>
-                           <children>
-                              <VBox alignment="TOP_CENTER">
-                                 <children>
-                                    <HBox alignment="CENTER" maxHeight="-Infinity" prefHeight="315.0" prefWidth="320.0"
-                                          style="-fx-background-color: #008DB4;">
-                                       <children>
-                                          <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="20.0"
-                                                HBox.hgrow="ALWAYS">
-                                             <children>
-                                                <JFXProgressBar fx:id="progressBar" prefHeight="25.0" prefWidth="267.0"
-                                                                progress="0.51"/>
-                                                <Label fx:id="prgressLabel" text="0% Complete" textFill="WHITE">
-                                                   <font>
-                                                      <Font size="18.0"/>
-                                                   </font>
-                                                </Label>
-                                             </children>
-                                          </VBox>
-                                       </children>
+                                    <TextField fx:id="registrationDateField" disable="true" maxWidth="-Infinity"
+                                               prefHeight="35.0" prefWidth="247.0"/>
+                                </children>
+                                <padding>
+                                    <Insets left="30.0" top="10.0"/>
+                                </padding>
+                            </VBox>
+                            <VBox prefHeight="36.0" prefWidth="320.0" spacing="10.0">
+                                <padding>
+                                    <Insets left="30.0" top="10.0"/>
+                                </padding>
+                                <children>
+                                    <Line endX="146.5" startX="-100.0" stroke="#bcb0b0"/>
+                                </children>
+                            </VBox>
+                            <VBox prefHeight="102.0" prefWidth="320.0">
+                                <padding>
+                                    <Insets top="10.0"/>
+                                </padding>
+                                <children>
+                                    <Label text="Level">
+                                        <font>
+                                            <Font size="14.0"/>
+                                        </font>
+                                        <VBox.margin>
+                                            <Insets left="30.0"/>
+                                        </VBox.margin>
+                                    </Label>
+                                    <HBox alignment="CENTER" maxWidth="-Infinity" prefHeight="52.0" prefWidth="320.0"
+                                          spacing="15.0">
+                                        <children>
+                                            <JFXRadioButton fx:id="degreeRadio" style="-jfx-selected-color: #0E8157;"
+                                                            text="Degree">
+                                                <toggleGroup>
+                                                    <ToggleGroup fx:id="level"/>
+                                                </toggleGroup>
+                                            </JFXRadioButton>
+                                            <JFXRadioButton fx:id="diplomaRadio" style="-jfx-selected-color: #0E8157;"
+                                                            text="Diploma" toggleGroup="$level"/>
+                                            <JFXRadioButton fx:id="certificateRadio"
+                                                            style="-jfx-selected-color: #0E8157;" text="Certificate"
+                                                            toggleGroup="$level"/>
+                                        </children>
                                     </HBox>
-                                    <HBox alignment="CENTER" maxHeight="-Infinity" prefHeight="197.0" prefWidth="320.0"
-                                          spacing="10.0">
-                                       <children>
-                                          <JFXButton fx:id="clearBtn" buttonType="RAISED" graphicTextGap="8.0"
-                                                     onAction="#onClear" prefHeight="37.0" prefWidth="140.0"
-                                                     style="-fx-background-color: #E48F04;" text="Clear"
-                                                     textFill="WHITE">
-                                             <graphic>
-                                                <ImageView fitHeight="26.0" fitWidth="21.0" pickOnBounds="true"
-                                                           preserveRatio="true">
-                                                   <image>
-                                                      <Image url="@../image/add/icons8_delete_26px_1.png"/>
-                                                   </image>
-                                                </ImageView>
-                                             </graphic>
-                                          </JFXButton>
-                                          <JFXButton fx:id="saveBtn" buttonType="RAISED" graphicTextGap="8.0"
-                                                     onAction="#onSave" prefHeight="37.0" prefWidth="140.0"
-                                                     style="-fx-background-color: #009EC4;" text="Save"
-                                                     textFill="WHITE">
-                                             <graphic>
-                                                <ImageView fitHeight="26.0" fitWidth="21.0" pickOnBounds="true"
-                                                           preserveRatio="true">
-                                                   <image>
-                                                      <Image url="@../image/add/icons8_double_tick_50px.png"/>
-                                                   </image>
-                                                </ImageView>
-                                             </graphic>
-                                          </JFXButton>
-                                       </children>
+                                </children>
+                            </VBox>
+                            <VBox prefHeight="102.0" prefWidth="320.0">
+                                <padding>
+                                    <Insets top="10.0"/>
+                                </padding>
+                                <children>
+                                    <HBox alignment="CENTER" maxWidth="-Infinity" prefHeight="52.0" prefWidth="320.0"
+                                          spacing="15.0">
+                                        <children>
+                                            <JFXComboBox fx:id="departmentsComboBox" prefHeight="25.0" prefWidth="264.0"
+                                                         promptText="Departments"/>
+                                        </children>
                                     </HBox>
-                                 </children>
-                              </VBox>
-                           </children>
-                        </HBox>
-                     </children>
-                     <HBox.margin>
-                        <Insets/>
-                     </HBox.margin>
-                  </VBox>
-               </children>
-               <padding>
-                  <Insets bottom="40.0" left="41.0" top="50.0"/>
-               </padding>
+                                </children>
+                            </VBox>
+                            <VBox prefHeight="68.0" prefWidth="320.0">
+                                <children>
+                                    <JFXTextField fx:id="courseNameField" focusColor="#686b72" labelFloat="true"
+                                                  maxWidth="-Infinity" prefHeight="25.0" prefWidth="255.0"
+                                                  promptText="Course Name"/>
+                                </children>
+                                <padding>
+                                    <Insets left="30.0" top="10.0"/>
+                                </padding>
+                            </VBox>
+                        </children>
+                    </VBox>
+                    <VBox prefHeight="616.0" prefWidth="320.0" spacing="20.0"
+                          style="-fx-background-color: transparent;">
+                        <children>
+                            <HBox prefHeight="250.0" prefWidth="320.0">
+                                <children>
+                                    <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="10.0"
+                                          style="-fx-background-color: #1D3044;" HBox.hgrow="ALWAYS">
+                                        <children>
+                                            <Label alignment="CENTER" prefHeight="20.0" prefWidth="167.0"
+                                                   text="Amount to pay:" textFill="WHITE">
+                                                <font>
+                                                    <Font size="14.0"/>
+                                                </font>
+                                            </Label>
+                                            <Label alignment="CENTER" prefHeight="27.0" prefWidth="162.0"
+                                                   text="N 200 000" textFill="WHITE">
+                                                <font>
+                                                    <Font name="System Bold" size="18.0"/>
+                                                </font>
+                                            </Label>
+                                        </children>
+                                    </VBox>
+                                    <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" spacing="40.0"
+                                          style="-fx-background-color: #fff;" HBox.hgrow="ALWAYS">
+                                        <children>
+                                            <JFXTextField fx:id="amountField" focusColor="#008db4" labelFloat="true"
+                                                          maxWidth="-Infinity" onKeyReleased="#calculateAmount"
+                                                          prefHeight="30.0" prefWidth="120.0" promptText="Ammount">
+                                                <font>
+                                                    <Font size="14.0"/>
+                                                </font>
+                                            </JFXTextField>
+                                            <JFXTextField fx:id="balanceField" labelFloat="true" maxWidth="-Infinity"
+                                                          prefWidth="120.0" promptText="Balance" text="N 0.00">
+                                                <font>
+                                                    <Font size="14.0"/>
+                                                </font>
+                                            </JFXTextField>
+                                        </children>
+                                        <padding>
+                                            <Insets top="70.0"/>
+                                        </padding>
+                                    </VBox>
+                                </children>
+                                <effect>
+                                    <DropShadow color="#7c7171"/>
+                                </effect>
+                            </HBox>
+                            <HBox prefHeight="259.0" prefWidth="320.0" style="-fx-background-color: #fff;">
+                                <effect>
+                                    <DropShadow color="#796f6f"/>
+                                </effect>
+                                <children>
+                                    <VBox alignment="TOP_CENTER">
+                                        <children>
+                                            <HBox alignment="CENTER" maxHeight="-Infinity" prefHeight="315.0"
+                                                  prefWidth="320.0" style="-fx-background-color: #008DB4;">
+                                                <children>
+                                                    <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0"
+                                                          spacing="20.0" HBox.hgrow="ALWAYS">
+                                                        <children>
+                                                            <JFXProgressBar fx:id="progressBar" prefHeight="25.0"
+                                                                            prefWidth="267.0" progress="0.0"/>
+                                                            <Label fx:id="progressLabel" text="0% Complete"
+                                                                   textFill="WHITE">
+                                                                <font>
+                                                                    <Font size="18.0"/>
+                                                                </font>
+                                                            </Label>
+                                                        </children>
+                                                    </VBox>
+                                                </children>
+                                            </HBox>
+                                            <HBox alignment="CENTER" maxHeight="-Infinity" prefHeight="197.0"
+                                                  prefWidth="320.0" spacing="10.0">
+                                                <children>
+                                                    <JFXButton fx:id="clearBtn" buttonType="RAISED" graphicTextGap="8.0"
+                                                               onAction="#onClear" prefHeight="37.0" prefWidth="140.0"
+                                                               style="-fx-background-color: #E48F04;" text="Clear"
+                                                               textFill="WHITE">
+                                                        <graphic>
+                                                            <ImageView fitHeight="26.0" fitWidth="21.0"
+                                                                       pickOnBounds="true" preserveRatio="true">
+                                                                <image>
+                                                                    <Image url="@../image/add/icons8_delete_26px_1.png"/>
+                                                                </image>
+                                                            </ImageView>
+                                                        </graphic>
+                                                    </JFXButton>
+                                                    <JFXButton fx:id="saveBtn" buttonType="RAISED" graphicTextGap="8.0"
+                                                               onAction="#onSave" prefHeight="37.0" prefWidth="140.0"
+                                                               style="-fx-background-color: #009EC4;" text="Save"
+                                                               textFill="WHITE">
+                                                        <graphic>
+                                                            <ImageView fitHeight="26.0" fitWidth="21.0"
+                                                                       pickOnBounds="true" preserveRatio="true">
+                                                                <image>
+                                                                    <Image url="@../image/add/icons8_double_tick_50px.png"/>
+                                                                </image>
+                                                            </ImageView>
+                                                        </graphic>
+                                                    </JFXButton>
+                                                </children>
+                                            </HBox>
+                                        </children>
+                                    </VBox>
+                                </children>
+                            </HBox>
+                        </children>
+                        <HBox.margin>
+                            <Insets/>
+                        </HBox.margin>
+                    </VBox>
+                </children>
+                <padding>
+                    <Insets bottom="40.0" left="41.0" top="50.0"/>
+                </padding>
             </HBox>
             <Pane opacity="0.78" prefHeight="51.0" prefWidth="200.0" style="-fx-background-color: #4873AA;"
                   AnchorPane.leftAnchor="60.0" AnchorPane.topAnchor="25.0">
-               <children>
-                  <Label layoutX="31.0" layoutY="12.0" prefHeight="27.0" prefWidth="148.0" text="Personal Details"
-                         textFill="WHITE">
-                     <font>
-                        <Font name="Bell MT" size="18.0"/>
-                     </font>
-                  </Label>
-               </children>
+                <children>
+                    <Label layoutX="31.0" layoutY="12.0" prefHeight="27.0" prefWidth="148.0" text="Personal Details"
+                           textFill="WHITE">
+                        <font>
+                            <Font name="Bell MT" size="18.0"/>
+                        </font>
+                    </Label>
+                </children>
             </Pane>
             <Pane layoutX="10.0" layoutY="10.0" opacity="0.78" prefHeight="51.0" prefWidth="200.0"
                   style="-fx-background-color: #4873AA;" AnchorPane.leftAnchor="430.0" AnchorPane.topAnchor="25.0">
-               <children>
-                  <Label layoutX="32.0" layoutY="12.0" prefHeight="27.0" prefWidth="148.0" text="School Details"
-                         textFill="WHITE">
-                     <font>
-                        <Font name="Bell MT" size="18.0"/>
-                     </font>
-                  </Label>
-               </children>
+                <children>
+                    <Label layoutX="32.0" layoutY="12.0" prefHeight="27.0" prefWidth="148.0" text="School Details"
+                           textFill="WHITE">
+                        <font>
+                            <Font name="Bell MT" size="18.0"/>
+                        </font>
+                    </Label>
+                </children>
             </Pane>
-         </children>
-      </AnchorPane>
-    </children>
+        </children>
+    </AnchorPane>
 </StackPane>
