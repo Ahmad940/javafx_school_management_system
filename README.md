@@ -44,3 +44,7 @@ The passwprd for the admin is :
 <strong><b>password: admin</b></strong>
 
 or go straight ahead and create your own user by sighning up, then going to mysql and <b> alter table users set role = 'admin' where username = 'your user name' <b/>
+
+Note: *Dont forget to edit the schoolmanagement.resource.config.xml file , make sure you change the connection string to match your local host / db connection url, and need to be mysql*
+
+uing any db different than mysql will result to changing all the mysql syntax in the application to the current db syntax that you are using
