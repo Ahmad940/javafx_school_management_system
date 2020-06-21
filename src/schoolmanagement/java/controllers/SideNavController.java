@@ -35,6 +35,7 @@ public class SideNavController {
         handlers();
     }
 
+
     public void homeController() {
         FxmlHandlers.animatedFxmlLoader(homeBtn, homePane, homePane.translateXProperty());
     }

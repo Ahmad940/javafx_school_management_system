@@ -38,7 +38,7 @@ object Test {
         student.amount = "20"
         student.balance = "0.00"
 
-        println(studentsDao.saveStudent(student))
+        println(studentsDao.getStudent("2"))
 
 //        var date_Time =
 

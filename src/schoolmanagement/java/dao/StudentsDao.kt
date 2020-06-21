@@ -75,4 +75,34 @@ class StudentsDao {
         }
     }
 
+    fun getStudent(id: String): List<Students> {
+        val sql = "select * from students where `id` = '$id'"
+        return jdbcTemplate!!.query<List<Students>>(sql) { rs ->
+            val list: MutableList<Students> = ArrayList()
+            while (rs.next()) {
+                val students = Students()
+                students.id = rs.getString(1)
+                students.firstName = rs.getString(2)
+                students.lastName = rs.getString(3)
+                students.mobileNumber = rs.getString(4)
+                students.email = rs.getString(5)
+                students.location = rs.getString(6)
+                students.gender = rs.getString(7)
+                students.registrationDate = rs.getString(8)
+                students.level = rs.getString(9)
+                students.department = rs.getString(10)
+                students.courseName = rs.getString(11)
+                students.amount = rs.getString(12)
+                students.balance = rs.getString(13)
+                list.add(students)
+            }
+            list
+        }
+    }
+
+    fun deleteStudent(id: String): Int {
+        val query = "delete from students where id = '$id' "
+        return jdbcTemplate!!.update(query)
+    }
+
 }

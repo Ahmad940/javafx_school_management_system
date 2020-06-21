@@ -1,11 +1,16 @@
 package schoolmanagement.java.controllers;
 
 import com.jfoenix.controls.*;
+import com.jfoenix.controls.datamodels.treetable.RecursiveTreeObject;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TreeItem;
+import javafx.scene.control.TreeTableColumn;
 import javafx.scene.effect.BoxBlur;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
@@ -20,12 +25,18 @@ import schoolmanagement.java.models.Departments;
 import schoolmanagement.java.models.Users;
 import schoolmanagement.java.utils.Alerts;
 import schoolmanagement.java.utils.Directories;
+import schoolmanagement.java.utils.RecursiveUser;
 import schoolmanagement.java.utils.Validators;
 
 import java.util.List;
 
 public class HomeController {
     String firstName, lastName, fullName = null;
+    ObservableList<RecursiveUser> list = null;
+    List<Users> userTableViewList = null;
+    String username = "";
+    @FXML
+    private JFXTextField searchField;
 
     @FXML
     private Button addDepartmentBtn;
@@ -73,6 +84,14 @@ public class HomeController {
     private UsersDao usersDao;
     private DepartmentsDao departmentsDao;
     private List<Users> userList;
+    @FXML
+    private JFXButton refreshBtn;
+    @FXML
+    private JFXTreeTableView<RecursiveUser> tableView;
+    @FXML
+    private TreeTableColumn<RecursiveUser, String> userCol;
+    @FXML
+    private TreeTableColumn<RecursiveUser, String> emailCol;
 
     public void initialize() {
         applicationContext = new ClassPathXmlApplicationContext(Directories.CONFIG_XML);
@@ -81,9 +100,30 @@ public class HomeController {
         departmentsDao = (DepartmentsDao) applicationContext.getBean("departmentsDao");
 
         userList = usersDao.getUser(LoginController.getInstance().getUsername());
+        list = FXCollections.observableArrayList();
+        userTableViewList = usersDao.getAllUsers();
 
+        setTable();
         setLabels();
         departmentsList();
+    }
+
+    private void setTable() {
+        userCol.setCellValueFactory(param -> param.getValue().getValue().userNameProperty());
+        emailCol.setCellValueFactory(param -> param.getValue().getValue().emailProperty());
+
+        TreeItem<RecursiveUser> root = new RecursiveTreeItem<RecursiveUser>(list, RecursiveTreeObject::getChildren);
+        tableView.setRoot(root);
+        tableView.setShowRoot(false);
+
+        userTableViewList.forEach(users -> {
+            list.addAll(new RecursiveUser(users.getUserName(), users.getEmail()));
+        });
+
+        searchField.textProperty().addListener((observable, oldValue, newValue) ->
+                tableView.setPredicate(modelTreeItem ->
+                        modelTreeItem.getValue().userNameProperty().getValue().toLowerCase().contains(newValue)
+                                | modelTreeItem.getValue().emailProperty().getValue().toLowerCase().contains(newValue)));
     }
 
     private void departmentsList() {
@@ -212,9 +252,8 @@ public class HomeController {
         content.setActions(saveBtn, cancelBtn);
 
         dialog.setOnDialogClosed(event -> {
-            mainPane.setEffect(null);
+            secondaryPane.setEffect(null);
         });
-        dialog.setLayoutX(100);
         dialog.show();
     }
 
@@ -272,4 +311,13 @@ public class HomeController {
         departmentsList();
     }
 
+    public void onRefresh() {
+        list.clear();
+        List<Users> refreshList = usersDao.getAllUsers();
+        ObservableList<RecursiveUser> observableList = FXCollections.observableArrayList();
+        refreshList.forEach(users -> {
+            observableList.addAll(new RecursiveUser(users.getUserName(), users.getEmail()));
+        });
+        list.addAll(observableList);
+    }
 }

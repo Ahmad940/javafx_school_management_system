@@ -1,94 +1,369 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.*?>
-<?import javafx.geometry.Insets?>
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.text.Font?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.*?>
 <StackPane xmlns:fx="http://javafx.com/fxml/1" fx:id="mainPane" xmlns="http://javafx.com/javafx/11.0.1"
            fx:controller="schoolmanagement.java.controllers.ViewStudentsController">
-   <AnchorPane fx:id="secondaryPane" prefHeight="616.0" prefWidth="1142.0" style="-fx-background-color: #E5E4E5;">
-      <HBox focusTraversable="true" prefHeight="100.0" prefWidth="200.0" spacing="50.0"
-            style="-fx-background-color: #E5E4E5;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
-            AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-         <padding>
-            <Insets bottom="40.0" left="45.0" top="50.0"/>
-         </padding>
-         <children>
-            <VBox prefHeight="526.0" prefWidth="683.0">
-               <children>
-                  <HBox alignment="TOP_RIGHT" prefHeight="140.0" prefWidth="683.0"
-                        style="-fx-background-color: #488BB5; -fx-background-radius: 5;">
-                     <children>
-                        <VBox alignment="CENTER_LEFT" focusTraversable="true" prefHeight="84.0" prefWidth="509.0">
-                           <children>
-                              <Label prefHeight="6.0" prefWidth="75.0" text="Filter By:" textFill="WHITE">
-                                 <font>
-                                    <Font name="System Bold" size="18.0"/>
-                                 </font>
-                              </Label>
-                              <HBox alignment="CENTER_LEFT" prefHeight="38.0" prefWidth="509.0" spacing="50.0">
-                                 <children>
-                                    <JFXRadioButton fx:id="idRadioBtn"
-                                                    style="-jfx-selected-color: #EB674A; -jfx-unselected-color: #fff;"
-                                                    text="Id" textFill="WHITE">
-                                       <toggleGroup>
-                                          <ToggleGroup fx:id="filterGroup"/>
-                                       </toggleGroup>
-                                    </JFXRadioButton>
-                                    <JFXRadioButton fx:id="namesRadioBtn"
-                                                    style="-jfx-selected-color: #EB674A; -jfx-unselected-color: #fff;"
-                                                    text="Names" textFill="WHITE" toggleGroup="$filterGroup"/>
-                                    <JFXTextField fx:id="searchField" labelFloat="true" prefHeight="25.0"
-                                                  prefWidth="158.0" promptText="Search By name or id"
-                                                  style="-fx-text-fill: #fff;" unFocusColor="#82b7d4"/>
-                                    <JFXButton fx:id="refreshField" buttonType="RAISED" onAction="#onRefresh"
-                                               style="-fx-background-color: #0068B1;" text="Refresh" textFill="WHITE">
-                                       <graphic>
-                                          <ImageView fitHeight="27.0" fitWidth="24.0" pickOnBounds="true"
-                                                     preserveRatio="true">
-                                             <image>
-                                                <Image url="@../image/view/icons8_refresh_30px.png"/>
-                                             </image>
-                                          </ImageView>
-                                       </graphic>
-                                    </JFXButton>
-                                 </children>
+    <AnchorPane fx:id="secondaryPane" prefHeight="616.0" prefWidth="1142.0" style="-fx-background-color: #E5E4E5;">
+        <HBox focusTraversable="true" prefHeight="100.0" prefWidth="200.0" spacing="50.0"
+              style="-fx-background-color: #E5E4E5;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+              AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <padding>
+                <Insets bottom="40.0" left="45.0" top="50.0"/>
+            </padding>
+            <children>
+                <VBox prefHeight="526.0" prefWidth="683.0">
+                    <children>
+                        <HBox alignment="TOP_RIGHT" prefHeight="140.0" prefWidth="683.0"
+                              style="-fx-background-color: #488BB5; -fx-background-radius: 5;">
+                            <children>
+                                <VBox alignment="CENTER_LEFT" focusTraversable="true" prefHeight="84.0"
+                                      prefWidth="509.0">
+                                    <children>
+                                        <Label prefHeight="6.0" prefWidth="75.0" text="Filter By:" textFill="WHITE">
+                                            <font>
+                                                <Font name="System Bold" size="18.0"/>
+                                            </font>
+                                        </Label>
+                                        <HBox alignment="CENTER_LEFT" prefHeight="38.0" prefWidth="509.0"
+                                              spacing="50.0">
+                                            <children>
+                                                <JFXRadioButton fx:id="idRadioBtn"
+                                                                style="-jfx-selected-color: #EB674A; -jfx-unselected-color: #fff;"
+                                                                text="Id" textFill="WHITE">
+                                                    <toggleGroup>
+                                                        <ToggleGroup fx:id="filterGroup"/>
+                                                    </toggleGroup>
+                                                </JFXRadioButton>
+                                                <JFXRadioButton fx:id="namesRadioBtn"
+                                                                style="-jfx-selected-color: #EB674A; -jfx-unselected-color: #fff;"
+                                                                text="Names" textFill="WHITE"
+                                                                toggleGroup="$filterGroup"/>
+                                                <JFXTextField fx:id="searchField" labelFloat="true" prefHeight="25.0"
+                                                              prefWidth="158.0" promptText="Search By name or id"
+                                                              style="-fx-text-fill: #fff;" unFocusColor="#82b7d4"/>
+                                                <JFXButton fx:id="refreshField" buttonType="RAISED"
+                                                           onAction="#onRefresh" style="-fx-background-color: #0068B1;"
+                                                           text="Refresh" textFill="WHITE">
+                                                    <graphic>
+                                                        <ImageView fitHeight="27.0" fitWidth="24.0" pickOnBounds="true"
+                                                                   preserveRatio="true">
+                                                            <image>
+                                                                <Image url="@../image/view/icons8_refresh_30px.png"/>
+                                                            </image>
+                                                        </ImageView>
+                                                    </graphic>
+                                                </JFXButton>
+                                            </children>
                               </HBox>
                            </children>
                         </VBox>
                      </children>
                   </HBox>
-                  <VBox prefHeight="89.0" prefWidth="683.0"/>
+                        <VBox prefHeight="89.0" prefWidth="683.0"/>
                   <VBox prefHeight="428.0" prefWidth="683.0">
                      <children>
-                        <JFXTreeTableView fx:id="treeTableView">
-                           <columns>
-                              <TreeTableColumn fx:id="idCol" prefWidth="156.0" text="Id"/>
-                              <TreeTableColumn fx:id="studentNamesCol" prefWidth="276.0" text="Student Names"/>
-                              <TreeTableColumn fx:id="courseEnrolledCol" prefWidth="250.0" text="Course Enrolled"/>
-                           </columns>
-                        </JFXTreeTableView>
+                         <JFXTreeTableView fx:id="treeTableView">
+                             <columns>
+                                 <TreeTableColumn fx:id="idCol" prefWidth="156.0" text="Id"/>
+                                 <TreeTableColumn fx:id="studentNamesCol" prefWidth="276.0" text="Student Names"/>
+                                 <TreeTableColumn fx:id="courseEnrolledCol" prefWidth="250.0" text="Course Enrolled"/>
+                             </columns>
+                             <contextMenu>
+                                 <ContextMenu>
+                                     <items>
+                                         <MenuItem fx:id="deleteMenu" mnemonicParsing="false" onAction="#onDelete"
+                                                   text="delete"/>
+                                     </items>
+                                 </ContextMenu>
+                             </contextMenu>
+                         </JFXTreeTableView>
                      </children>
                   </VBox>
-               </children>
-            </VBox>
-            <VBox prefHeight="526.0" prefWidth="295.0"/>
-         </children>
-      </HBox>
-      <Pane layoutX="81.0" layoutY="23.0" prefHeight="107.0" prefWidth="115.0"
-            style="-fx-background-color: #0068AE; -fx-background-radius: 5;" AnchorPane.leftAnchor="81.0"
-            AnchorPane.topAnchor="15.0">
-         <children>
-            <ImageView fitHeight="55.0" fitWidth="60.0" layoutX="29.0" layoutY="28.0" pickOnBounds="true"
-                       preserveRatio="true">
-               <image>
-                  <Image url="@../image/home%20icons/sub%20icons/icons8_find_user_male_60px.png"/>
-               </image>
-            </ImageView>
-         </children>
-      </Pane>
-   </AnchorPane>
+                    </children>
+                </VBox>
+                <VBox prefHeight="526.0" prefWidth="295.0">
+                    <children>
+                        <VBox maxHeight="-Infinity" prefHeight="86.0" prefWidth="300.0" VBox.vgrow="ALWAYS">
+                            <children>
+                                <AnchorPane>
+                                    <children>
+                                        <ImageView fitHeight="178.0" fitWidth="300.0" pickOnBounds="true"
+                                                   preserveRatio="true">
+                                            <image>
+                                                <Image url="@../image/back.jpg"/>
+                                            </image>
+                                        </ImageView>
+                                        <Label fx:id="fullNameLabel" alignment="CENTER" layoutY="99.0" prefHeight="17.0"
+                                               prefWidth="300.0" text="Ahmad Muhammad">
+                                            <font>
+                                                <Font size="18.0"/>
+                                            </font>
+                                            <textFill>
+                                                <LinearGradient endX="0.28095238095238084" endY="0.4714285714285714"
+                                                                startX="0.42857142857142855" startY="0.680952380952381">
+                                                    <stops>
+                                                        <Stop color="#463113"/>
+                                                        <Stop color="#724d19" offset="1.0"/>
+                                                    </stops>
+                                                </LinearGradient>
+                                            </textFill>
+                                        </Label>
+                                    </children>
+                                    <effect>
+                                        <DropShadow/>
+                                    </effect>
+                                </AnchorPane>
+                            </children>
+                        </VBox>
+                        <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #fff;"
+                              VBox.vgrow="ALWAYS">
+                            <children>
+                                <VBox prefHeight="362.0" prefWidth="300.0">
+                                    <children>
+                                        <HBox prefHeight="32.0" prefWidth="300.0"/>
+                                        <HBox alignment="CENTER_LEFT" prefHeight="32.0" prefWidth="300.0"
+                                              spacing="10.0">
+                                            <children>
+                                                <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true"
+                                                           preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@../image/view/icons8_new_post_30px.png"/>
+                                                    </image>
+                                                </ImageView>
+                                                <Label fx:id="emailLabel" prefHeight="17.0" prefWidth="251.0"
+                                                       text="Ahmadmuhammadmak5@gmail.com" textFill="#5e5353">
+                                                    <font>
+                                                        <Font size="14.0"/>
+                                                    </font>
+                                                </Label>
+                                            </children>
+                                            <VBox.margin>
+                                                <Insets/>
+                                            </VBox.margin>
+                                            <padding>
+                                                <Insets left="30.0"/>
+                                            </padding>
+                                        </HBox>
+                                        <HBox alignment="CENTER_LEFT" prefHeight="32.0" prefWidth="300.0"
+                                              spacing="10.0">
+                                            <children>
+                                                <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true"
+                                                           preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@../image/view/icons8_phone_24px_1.png"/>
+                                                    </image>
+                                                </ImageView>
+                                                <Label fx:id="mobileNoLabel" prefHeight="17.0" prefWidth="251.0"
+                                                       text="09050273391" textFill="#5e5353">
+                                                    <font>
+                                                        <Font size="14.0"/>
+                                                    </font>
+                                                </Label>
+                                            </children>
+                                            <padding>
+                                                <Insets left="30.0"/>
+                                            </padding>
+                                        </HBox>
+                                        <HBox alignment="CENTER_LEFT" prefHeight="32.0" prefWidth="300.0"
+                                              spacing="10.0">
+                                            <children>
+                                                <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true"
+                                                           preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@../image/view/icons8_marker_50px.png"/>
+                                                    </image>
+                                                </ImageView>
+                                                <Label fx:id="locationLabel" prefHeight="17.0" prefWidth="251.0"
+                                                       text="Kaduna" textFill="#5e5353">
+                                                    <font>
+                                                        <Font size="14.0"/>
+                                                    </font>
+                                                </Label>
+                                            </children>
+                                            <padding>
+                                                <Insets left="30.0"/>
+                                            </padding>
+                                        </HBox>
+                                        <HBox alignment="CENTER_LEFT" prefHeight="12.0" prefWidth="300.0"
+                                              spacing="10.0">
+                                            <padding>
+                                                <Insets left="30.0"/>
+                                            </padding>
+                                            <children>
+                                                <Line endX="138.2928924560547" endY="0.7928932309150696"
+                                                      startX="-120.20710754394531" startY="0.7928932309150696"
+                                                      stroke="#dddbdb"/>
+                                            </children>
+                                        </HBox>
+                                        <HBox alignment="CENTER_LEFT" prefHeight="32.0" prefWidth="300.0"
+                                              spacing="10.0">
+                                            <children>
+                                                <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true"
+                                                           preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@../image/view/icons8_graduation_cap_26px.png"/>
+                                                    </image>
+                                                </ImageView>
+                                                <Label fx:id="departmentLabel" prefHeight="17.0" prefWidth="251.0"
+                                                       text="Department" textFill="#5e5353">
+                                                    <font>
+                                                        <Font size="14.0"/>
+                                                    </font>
+                                                </Label>
+                                            </children>
+                                            <padding>
+                                                <Insets left="30.0"/>
+                                            </padding>
+                                        </HBox>
+                                        <HBox alignment="CENTER_LEFT" prefHeight="32.0" prefWidth="300.0"
+                                              spacing="10.0">
+                                            <children>
+                                                <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true"
+                                                           preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@../image/view/icons8_course_50px.png"/>
+                                                    </image>
+                                                </ImageView>
+                                                <Label fx:id="levelLabel" prefHeight="17.0" prefWidth="251.0"
+                                                       text="Degree" textFill="#5e5353">
+                                                    <font>
+                                                        <Font size="14.0"/>
+                                                    </font>
+                                                </Label>
+                                            </children>
+                                            <padding>
+                                                <Insets left="30.0"/>
+                                            </padding>
+                                        </HBox>
+                                        <HBox alignment="CENTER_LEFT" prefHeight="32.0" prefWidth="300.0"
+                                              spacing="10.0">
+                                            <children>
+                                                <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true"
+                                                           preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@../image/view/icons8_report_card_24px.png"/>
+                                                    </image>
+                                                </ImageView>
+                                                <Label fx:id="courseNameLabel" prefHeight="17.0" prefWidth="251.0"
+                                                       text="Course Name" textFill="#5e5353">
+                                                    <font>
+                                                        <Font size="14.0"/>
+                                                    </font>
+                                                </Label>
+                                            </children>
+                                            <padding>
+                                                <Insets left="30.0"/>
+                                            </padding>
+                                        </HBox>
+                                        <HBox alignment="CENTER_LEFT" prefHeight="9.0" prefWidth="300.0" spacing="10.0">
+                                            <padding>
+                                                <Insets left="30.0"/>
+                                            </padding>
+                                            <children>
+                                                <Line endX="138.2928924560547" endY="0.7928932309150696"
+                                                      startX="-120.20710754394531" startY="0.7928932309150696"
+                                                      stroke="#dddbdb"/>
+                                            </children>
+                                        </HBox>
+                                        <HBox alignment="TOP_RIGHT" prefHeight="106.0" prefWidth="300.0" spacing="10.0">
+                                            <padding>
+                                                <Insets left="30.0"/>
+                                            </padding>
+                                            <children>
+                                                <VBox alignment="CENTER" prefHeight="62.0" prefWidth="200.0">
+                                                    <children>
+                                                        <HBox alignment="CENTER_LEFT" maxHeight="-Infinity"
+                                                              prefHeight="26.0" prefWidth="200.0">
+                                                            <children>
+                                                                <Label prefHeight="17.0" prefWidth="70.0" text="Fee"
+                                                                       textFill="#827979"/>
+                                                                <Label alignment="CENTER_RIGHT" prefHeight="17.0"
+                                                                       prefWidth="120.0" text="N 200 000.00"
+                                                                       textFill="#827979"/>
+                                                            </children>
+                                                        </HBox>
+                                                        <HBox alignment="CENTER_LEFT" maxHeight="-Infinity"
+                                                              prefHeight="1.0" prefWidth="201.0">
+                                                            <children>
+                                                                <Line endX="100.0" startX="-100.0" stroke="#9a8d8d"/>
+                                                            </children>
+                                                        </HBox>
+                                                        <HBox alignment="CENTER_LEFT" maxHeight="-Infinity"
+                                                              prefHeight="26.0" prefWidth="200.0">
+                                                            <children>
+                                                                <Label prefHeight="17.0" prefWidth="70.0" text="Paid"
+                                                                       textFill="#827979"/>
+                                                                <Label fx:id="paidLabel" alignment="CENTER_RIGHT"
+                                                                       prefHeight="17.0" prefWidth="120.0"
+                                                                       text="N 190 000.00" textFill="#827979"/>
+                                                            </children>
+                                                        </HBox>
+                                                        <HBox alignment="CENTER_LEFT" maxHeight="-Infinity"
+                                                              prefHeight="1.0" prefWidth="201.0">
+                                                            <children>
+                                                                <Line endX="100.0" startX="-100.0" stroke="#9a8d8d"/>
+                                                            </children>
+                                                        </HBox>
+                                                        <HBox alignment="CENTER_LEFT" maxHeight="-Infinity"
+                                                              prefHeight="26.0" prefWidth="200.0">
+                                                            <children>
+                                                                <Label prefHeight="17.0" prefWidth="70.0" text="Balance"
+                                                                       textFill="#827979"/>
+                                                                <Label fx:id="balanceLabel" alignment="CENTER_RIGHT"
+                                                                       prefHeight="17.0" prefWidth="120.0"
+                                                                       text="N 10 000.00" textFill="#827979"/>
+                                                            </children>
+                                                        </HBox>
+                                                    </children>
+                                                </VBox>
+                                            </children>
+                                        </HBox>
+                                    </children>
+                                </VBox>
+                            </children>
+                            <effect>
+                                <DropShadow color="#796b6b"/>
+                            </effect>
+                        </VBox>
+                    </children>
+                </VBox>
+            </children>
+        </HBox>
+        <Pane layoutX="81.0" layoutY="23.0" prefHeight="107.0" prefWidth="115.0"
+              style="-fx-background-color: #0068AE; -fx-background-radius: 5;" AnchorPane.leftAnchor="81.0"
+              AnchorPane.topAnchor="15.0">
+            <children>
+                <ImageView fitHeight="55.0" fitWidth="60.0" layoutX="29.0" layoutY="28.0" pickOnBounds="true"
+                           preserveRatio="true">
+                    <image>
+                        <Image url="@../image/home%20icons/sub%20icons/icons8_find_user_male_60px.png"/>
+                    </image>
+                </ImageView>
+            </children>
+        </Pane>
+        <Button fx:id="editBtn" layoutX="1004.0" layoutY="185.0" mnemonicParsing="false" onAction="#onEdit"
+                prefHeight="55.0" prefWidth="55.0" style="-fx-background-color: #F53378; -fx-background-radius: 50;"
+                AnchorPane.rightAnchor="83.0" AnchorPane.topAnchor="185.0">
+            <graphic>
+                <ImageView fitHeight="26.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../image/home%20icons/sub%20icons/icons8_edit_24px.png"/>
+                    </image>
+                </ImageView>
+            </graphic>
+            <cursor>
+                <Cursor fx:constant="HAND"/>
+            </cursor>
+        </Button>
+    </AnchorPane>
 </StackPane>
