@@ -54,8 +54,8 @@ Concerning database, you are going to setup your database connection url in the 
 there is a folder in the projects directory called <b>db database</b> that is the my database that i backup. so enter your mysql/phpmyadmin/mysql workshop and import the backup file. so it wll load all the tables and database for you,
 
 The passwprd for the admin is :
-<strong><b>usernme: admin</b></strong>
-<strong><b>password: admin</b></strong>
+####<strong><b>usernme: admin</b></strong>
+####<strong><b>password: admin</b></strong>
 
 or go straight ahead and create your own user by sighning up, then going to mysql and <b> alter table users set role = 'admin' where username = 'your user name' <b/>
 
