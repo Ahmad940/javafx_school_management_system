@@ -1,0 +1,4 @@
+*.java linguist-detectable=true
+*.javafx linguist-detectable=true
+*.kotlin linguist-detectable=true
+*.spring framework linguist-detectable=true
